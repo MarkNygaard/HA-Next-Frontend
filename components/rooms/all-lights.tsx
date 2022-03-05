@@ -3,15 +3,11 @@ import useHassStore from '../../stores/hass.store';
 import { useEntity } from '@hooks';
 import { useState, useEffect } from 'react';
 
-const LivingRoom = () => {
-  const entity_id = 'group.living_room_lights';
-  const temp_id = 'sensor.living_room_temperature';
-  const humid_id = 'sensor.living_room_humidity';
+const AllLights = () => {
+  const entity_id = 'light.all_lights';
 
   const { connection } = useHassStore();
   const entity = useEntity(entity_id);
-  const temp = useEntity(temp_id);
-  const humid = useEntity(humid_id);
 
   const [state, setState] = useState<any>(entity?.state || 'off');
 
@@ -34,13 +30,16 @@ const LivingRoom = () => {
   };
 
   return (
-    <div className="flex max-w-xs p-2">
+    <div className="max-w-5-xl flex p-2">
       <button
-        className="m-4 flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600"
+        className="m-4 flex w-full items-center justify-center rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600"
         onClick={toggle}
         type="button"
       >
-        <div className="flex justify-end">
+        <div className="px-3 text-xl font-normal text-white dark:text-black">
+          All Lights
+        </div>
+        <div className="flex">
           {state === 'on' ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,27 +64,9 @@ const LivingRoom = () => {
             </svg>
           )}
         </div>
-        <div className="flex justify-center px-12">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 512"
-            className="h-16 w-16 text-tile-svg dark:text-black"
-            fill="currentColor"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M592 224C565.5 224 544 245.5 544 272V352H96V272C96 245.5 74.51 224 48 224S0 245.5 0 272v192C0 472.8 7.164 480 16 480h64c8.836 0 15.1-7.164 15.1-16L96 448h448v16c0 8.836 7.164 16 16 16h64c8.836 0 16-7.164 16-16v-192C640 245.5 618.5 224 592 224zM128 272V320h384V272c0-38.63 27.53-70.95 64-78.38V160c0-70.69-57.31-128-128-128H191.1c-70.69 0-128 57.31-128 128L64 193.6C100.5 201.1 128 233.4 128 272z" />
-          </svg>
-        </div>
-        <div className="pt-3 text-xl font-normal text-white dark:text-black">
-          Living Room
-        </div>
-        <div className="text-xs font-thin text-white">
-          {temp?.state} °C / {humid?.state}%
-        </div>
       </button>
     </div>
   );
 };
 
-export default LivingRoom;
+export default AllLights;

@@ -5,9 +5,13 @@ import { useState, useEffect } from 'react';
 
 const WalkInCloset = () => {
   const entity_id = 'light.walk_in_closet_aurelle';
+  const temp_id = 'sensor.walk_in_closet_temperature';
+  const humid_id = 'sensor.walk_in_closet_humidity';
 
   const { connection } = useHassStore();
   const entity = useEntity(entity_id);
+  const temp = useEntity(temp_id);
+  const humid = useEntity(humid_id);
 
   const [state, setState] = useState<any>(entity?.state || 'off');
 
@@ -32,7 +36,7 @@ const WalkInCloset = () => {
   return (
     <div className="flex max-w-xs p-2">
       <button
-        className="m-4 flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500 dark:hover:bg-zinc-600"
+        className="m-4 flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600"
         onClick={toggle}
         type="button"
       >
@@ -75,6 +79,9 @@ const WalkInCloset = () => {
         </div>
         <div className="pt-3 text-xl font-normal text-white dark:text-black">
           Walk in Closet
+        </div>
+        <div className="text-xs font-thin text-white">
+          {temp?.state} °C / {humid?.state}%
         </div>
       </button>
     </div>

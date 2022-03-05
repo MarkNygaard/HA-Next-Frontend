@@ -1,15 +1,19 @@
 import React from 'react';
+import { StatusModal } from 'components/modals';
+import DetailsWindow from '@components/details/details';
 
 import Layout from '@components/layout';
-import Navigation from '@components/navigation';
 
 const Home: React.FunctionComponent = () => {
   return (
     <div className="min-h-screen">
       <main className="container">
         <div className="flex w-screen">
-          <Navigation />
-          <Layout />
+          <Layout>
+            test
+            <DetailsWindow />
+          </Layout>
+          <StatusModal />
         </div>
       </main>
     </div>

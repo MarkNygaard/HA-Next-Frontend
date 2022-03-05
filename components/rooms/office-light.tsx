@@ -5,9 +5,13 @@ import { useState, useEffect } from 'react';
 
 const OfficeLight = () => {
   const entity_id = 'light.office_lightstrip';
+  const temp_id = 'sensor.kitchen_temperature';
+  const humid_id = 'sensor.kitchen_humidity';
 
   const { connection } = useHassStore();
   const entity = useEntity(entity_id);
+  const temp = useEntity(temp_id);
+  const humid = useEntity(humid_id);
 
   const [state, setState] = useState<any>(entity?.state || 'off');
 
@@ -32,7 +36,7 @@ const OfficeLight = () => {
   return (
     <div className="flex max-w-xs p-2">
       <button
-        className="m-4 flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500 dark:hover:bg-zinc-600"
+        className="m-4 flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600"
         onClick={toggle}
         type="button"
       >
@@ -76,6 +80,7 @@ const OfficeLight = () => {
         <div className="pt-3 text-xl font-normal text-white dark:text-black">
           Office
         </div>
+        <div className="text-xs font-thin text-white"></div>
       </button>
     </div>
   );

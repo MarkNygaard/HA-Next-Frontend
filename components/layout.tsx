@@ -1,20 +1,23 @@
 import React from 'react';
-import Rooms from '@components/rooms';
-import { StatusModal } from 'components/modals';
+
+import Navigation from 'components/navigation';
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
-    <div className="max-w-screen flex min-h-screen w-full items-center justify-center bg-gray-100 dark:bg-luke-bg">
-      <div className="relative flex">
-        <div className="relative max-w-lg">
-          <div className="absolute left-0 -bottom-20  h-96 w-96 animate-blob rounded-full bg-purple-300 opacity-50 blur-xl filter dark:mix-blend-overlay"></div>
-          <div className="animation-delay-2000 absolute -right-4 -bottom-20 h-96 w-96 animate-blob rounded-full bg-yellow-300 opacity-50 blur-xl filter dark:mix-blend-overlay"></div>
-          <div className="animation-delay-4000 absolute -top-28 -left-40 h-96 w-96 animate-blob rounded-full bg-pink-300 opacity-50 blur-xl filter dark:mix-blend-overlay"></div>
+    <div className="flex max-h-screen w-full">
+      <Navigation />
+      <div className="relative flex min-h-screen w-full items-center justify-center bg-gray-100 dark:bg-luke-bg">
+        <div className="relative flex">
+          <div className="relative max-w-lg">
+            <div className="absolute left-0 -bottom-20 animate-blob rounded-full bg-purple-300 opacity-50 blur-xl filter dark:mix-blend-overlay md:h-64 md:w-64 xl:h-96 xl:w-96"></div>
+            <div className="animation-delay-2000 absolute -right-4 -bottom-20 animate-blob rounded-full bg-yellow-300 opacity-50 blur-xl filter dark:mix-blend-overlay md:h-64 md:w-64 xl:h-96 xl:w-96"></div>
+            <div className="animation-delay-4000 absolute -top-28 -left-40 animate-blob rounded-full bg-pink-300 opacity-50 blur-xl filter dark:mix-blend-overlay md:h-64 md:w-64 xl:h-96 xl:w-96"></div>
+          </div>
+        </div>
+        <div className="max-w-50 max-w-8xl absolute flex max-h-screen w-full flex-wrap justify-center overflow-auto">
+          {children}
         </div>
       </div>
-      {children}
-      <StatusModal />
-      <Rooms />
     </div>
   );
 };
