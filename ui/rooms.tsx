@@ -10,7 +10,7 @@ import Bathroom from './rooms/bathroom';
 export default function Rooms() {
   return (
     <>
-      <div className="max-w-50 absolute flex max-h-screen max-w-6xl flex-wrap px-12">
+      <div className="max-w-50 absolute flex max-h-screen max-w-6xl flex-wrap px-14">
         <Hallway />
         <Kitchen />
         <LivingRoom />
