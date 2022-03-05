@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import styled from "styled-components";
-import StatusContext from "../../contexts/StatusContext";
-import { ConnectionStatus } from "../../types";
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import styled from 'styled-components';
+import StatusContext from '../../contexts/StatusContext';
+import { ConnectionStatus } from '../../types';
 
 const StatusText: Record<ConnectionStatus, string> = {
-  [ConnectionStatus.Connected]: "Connected",
-  [ConnectionStatus.Disconnected]: "Disconnected",
-  [ConnectionStatus.Reconnecting]: "Reconnecting",
+  [ConnectionStatus.Connected]: 'Connected',
+  [ConnectionStatus.Disconnected]: 'Disconnected',
+  [ConnectionStatus.Reconnecting]: 'Reconnecting',
 };
 
 const Status: React.FunctionComponent = ({}) => {
@@ -44,6 +44,6 @@ const StatusModal = styled.div<{ show: boolean }>`
 
   ${({ show }) => `
     opacity: ${show ? 1 : 0};
-    transform: translateY(${show ? 0 : "200%"});
+    transform: translateY(${show ? 0 : '200%'});
   `}
 `;

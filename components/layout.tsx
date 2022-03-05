@@ -1,7 +1,8 @@
 import React from 'react';
-import Rooms from 'ui/rooms';
+import Rooms from '@components/rooms';
+import { StatusModal } from 'components/modals';
 
-export default function Layout() {
+const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <div className="max-w-screen flex min-h-screen w-full items-center justify-center bg-gray-100 dark:bg-luke-bg">
       <div className="relative flex">
@@ -11,7 +12,11 @@ export default function Layout() {
           <div className="animation-delay-4000 absolute -top-28 -left-40 h-96 w-96 animate-blob rounded-full bg-pink-300 opacity-50 blur-xl filter dark:mix-blend-overlay"></div>
         </div>
       </div>
+      {children}
+      <StatusModal />
       <Rooms />
     </div>
   );
-}
+};
+
+export default Layout;
