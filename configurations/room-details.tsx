@@ -1,3 +1,5 @@
+// Important: entity_name should be the same as in rooms.tsx in order for the Lights array to show up
+
 export const RoomDetailConfigurations = [
   // Hallway
   {

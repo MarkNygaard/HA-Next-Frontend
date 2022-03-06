@@ -75,19 +75,21 @@ const StandardButton = ({
               {entity_name}
             </div>
           )}
-          <div className="flex w-full justify-center divide-x text-xs font-thin text-white dark:text-black">
+          <div className="flex w-full justify-center divide-x text-xs font-thin text-white dark:divide-zinc-800 dark:text-black">
             {temp?.state ? <div className="px-2">{temp?.state} °C</div> : <></>}
             {humid?.state ? <div className="px-2">{humid?.state}%</div> : <></>}
           </div>
         </button>
         {allEntities.map((allEntities: any) => {
           return allEntities.entity_name === entity_name ? (
-            <DetailsWindow
-              key={allEntities.entity_name}
-              allEntities={allEntities.Lights}
-              open={isOpen}
-              onClose={() => setIsOpen(false)}
-            />
+            allEntities.Lights.length ? (
+              <DetailsWindow
+                key={allEntities.entity_name}
+                allEntities={allEntities.Lights}
+                open={isOpen}
+                onClose={() => setIsOpen(false)}
+              />
+            ) : null
           ) : null;
         })}
       </div>

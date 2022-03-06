@@ -3,6 +3,9 @@ import { FaCouch, FaKey, FaBed, FaUtensils, FaTshirt } from 'react-icons/fa';
 import { MdShower } from 'react-icons/md';
 import { GiTable, GiRoad, GiFlexibleLamp } from 'react-icons/gi';
 
+// Search icons at https://react-icons.github.io/react-icons/
+// Remember to Icon above and add it in the list below.
+
 function Icon(props) {
   switch (props.symbol) {
     case 'Lightbulb':

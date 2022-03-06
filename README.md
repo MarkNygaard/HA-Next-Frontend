@@ -1,22 +1,16 @@
-# Home Assistant Next.js Starter
+# Home Assistant Next.js Frontend
 
-This is a very basic Next.js starter for creating custom frontends for Home Assistant.
-It includes auth and connection functionality from [`home-assistant-js-websocket`](https://github.com/home-assistant/home-assistant-js-websocket).
+This is a Home Assistant frontend created on Next.js build with TypeScript and Tailwind.
+Thanks to dangreco for his which this frontend is build up on. See: https://github.com/dangreco/home-assistant-nextjs-starter
 
 # Features
-
-- [x] Authentication
-- [x] Connection management
-- [x] Entity helper hooks
-- [ ] Service helpers
-- [ ] Config helpers
 
 # Getting Started
 
 1. Clone this repository
 
 ```shell
-$ git clone https://github.com/dangreco/home-assistant-nextjs-starter
+$ git clone https://github.com/MarkNygaard/HA-Next-Frontend.git
 ```
 
 2. Install dependencies
@@ -28,7 +22,7 @@ $ yarn
 3. Edit `utils/config.ts` with the name of your app:
 
 ```tsx
-const APP_NAME = "app-name"; // <- Edit this!
+const APP_NAME = 'app-name'; // <- Edit this!
 
 export { APP_NAME };
 ```
@@ -39,7 +33,21 @@ export { APP_NAME };
 $ yarn dev
 ```
 
-5. Open up `localhost:3000` in your browser, you're done!
+5. Open up `localhost:3000` in your browser. The site might run slow in dev mode.
+
+6. For production build
+
+```shell
+$ yarn build
+```
+
+7. Run you build
+
+```shell
+$ yarn start
+```
+
+8. Open up `localhost:3000` in your browser, you're done!
 
 # Hooks
 

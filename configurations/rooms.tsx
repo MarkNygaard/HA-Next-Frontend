@@ -1,3 +1,6 @@
+// Main configuration file for rooms overview.
+// See available icons in Components/icons/index.tsx
+
 export const rooms = [
   {
     entity_name: 'Hallway',

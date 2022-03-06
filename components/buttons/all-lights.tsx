@@ -3,9 +3,12 @@ import useHassStore from '../../stores/hass.store';
 import { useEntity } from '@hooks';
 import { useState, useEffect } from 'react';
 import Icon from '@components/icons';
+import { allLights } from 'configurations/all-lights';
 
 const AllLights = () => {
-  const entity_id = 'light.all_lights';
+  const entity_id = allLights.entity_id;
+
+  const entity_name = allLights.entity_name;
 
   const { connection } = useHassStore();
   const entity = useEntity(entity_id);
@@ -31,14 +34,14 @@ const AllLights = () => {
   };
 
   return (
-    <div className="max-w-5-xl flex p-2">
+    <div className="flex max-w-5xl p-2">
       <button
         className="m-4 flex w-full items-center justify-center rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600"
         onClick={toggle}
         type="button"
       >
         <div className="px-3 text-xl font-normal text-white dark:text-black">
-          All Lights
+          {entity_name}
         </div>
         <div className="flex">
           {state === 'on' ? (
