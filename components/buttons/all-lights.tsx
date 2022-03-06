@@ -2,7 +2,7 @@ import { callService } from 'home-assistant-js-websocket';
 import useHassStore from '../../stores/hass.store';
 import { useEntity } from '@hooks';
 import { useState, useEffect } from 'react';
-import { BsLightbulbFill } from 'react-icons/bs';
+import Icon from '@components/icons';
 
 const AllLights = () => {
   const entity_id = 'light.all_lights';
@@ -43,11 +43,11 @@ const AllLights = () => {
         <div className="flex">
           {state === 'on' ? (
             <div className="text-2xl text-yellow-300">
-              <BsLightbulbFill />
+              <Icon symbol="Lightbulb" />
             </div>
           ) : (
             <div className="text-2xl text-white dark:text-black/50">
-              <BsLightbulbFill />
+              <Icon symbol="Lightbulb" />
             </div>
           )}
         </div>

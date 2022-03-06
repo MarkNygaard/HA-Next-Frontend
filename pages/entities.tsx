@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth, useEntities, useHass, useQuery } from '@hooks';
+import { useEntities, useQuery } from '@hooks';
 import Layout from '@components/layout';
 
 export default function entitySearch() {
