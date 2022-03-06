@@ -1,3 +1,4 @@
-import StatusModal from "./Status";
+import StatusModal from './Status';
+import DetailsWindow from './DetailsWindow';
 
-export { StatusModal };
+export { StatusModal, DetailsWindow };
