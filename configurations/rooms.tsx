@@ -9,7 +9,7 @@ export const rooms = [
   },
   {
     entity_name: 'Kitchen',
-    entity_id: 'group.kitchen_lights',
+    entity_id: 'light.kitchen',
     entity_icon: 'Utensils',
     temp_id: 'sensor.kitchen_temperature',
     humid_id: 'sensor.kitchen_humidity',

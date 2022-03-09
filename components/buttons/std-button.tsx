@@ -82,14 +82,13 @@ const StandardButton = ({
         </button>
         {allEntities.map((allEntities: any) => {
           return allEntities.entity_name === entity_name ? (
-            allEntities.Lights.length ? (
-              <DetailsWindow
-                key={allEntities.entity_name}
-                allEntities={allEntities.Lights}
-                open={isOpen}
-                onClose={() => setIsOpen(false)}
-              />
-            ) : null
+            <DetailsWindow
+              key={allEntities.entity_name}
+              allEntities={allEntities.Lights}
+              entity_id={entity_id}
+              open={isOpen}
+              onClose={() => setIsOpen(false)}
+            />
           ) : null;
         })}
       </div>

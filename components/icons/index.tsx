@@ -1,6 +1,13 @@
 import { BsLightbulbFill, BsLaptop } from 'react-icons/bs';
-import { FaCouch, FaKey, FaBed, FaUtensils, FaTshirt } from 'react-icons/fa';
-import { MdShower } from 'react-icons/md';
+import {
+  FaCouch,
+  FaKey,
+  FaBed,
+  FaUtensils,
+  FaTshirt,
+  FaTemperatureLow,
+} from 'react-icons/fa';
+import { MdShower, MdOutlineBrightnessMedium } from 'react-icons/md';
 import { GiTable, GiRoad, GiFlexibleLamp } from 'react-icons/gi';
 
 // Search icons at https://react-icons.github.io/react-icons/
@@ -30,6 +37,10 @@ function Icon(props) {
       return <GiRoad />;
     case 'CornorLamp':
       return <GiFlexibleLamp />;
+    case 'Brightness':
+      return <MdOutlineBrightnessMedium />;
+    case 'Temperature':
+      return <FaTemperatureLow />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }
