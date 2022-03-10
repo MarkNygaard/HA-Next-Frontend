@@ -9,7 +9,9 @@ Thanks to dangreco for his starter repo which this frontend is build up on. See:
 
 1. [Create an account on DatoCMS](https://datocms.com).
 
-2. Let DatoCMS set everything up for you clicking this button: [![Clone DatoCMS project](https://dashboard.datocms.com/clone/button.svg)](https://dashboard.datocms.com/clone?projectId=64697&name=HA-Frontend)
+2. Let DatoCMS set everything up for you clicking this button:
+
+[![Clone DatoCMS project](https://dashboard.datocms.com/clone/button.svg)](https://dashboard.datocms.com/clone?projectId=64697&name=HA-Frontend)
 
 ### Local Setup
 
@@ -49,7 +51,7 @@ Then set each variable on `.env.local`:
 
 - `DATOCMS_API_KEY` should be the API token you just copied.
 
-Your `.env` file should look like this:
+Your `.env.local` file should look like this:
 
 ```bash
 DATOCMS_API_KEY=...
@@ -85,7 +87,9 @@ Open up `localhost:3000` in your browser, you're done!
 
 - `pages/index.tsx` This is where your "dashboard" should go. The user will be redirected to this route after succesful authentication.
 
-- `pages/auth/index.tsx` This is where the user will find a Home Assistant instance and authenticate.
+- `components/` This is where your components like navigation, buttons, properties etc. are placed.
+
+- `components/icons/index.tsx` This is where you will add new icons to be used. Search icons at https://react-icons.github.io/react-icons/
 
 ## Entities (Instructions from dangreco see: https://github.com/dangreco/home-assistant-nextjs-starter)
 
