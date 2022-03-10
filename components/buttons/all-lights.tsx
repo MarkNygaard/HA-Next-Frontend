@@ -3,13 +3,8 @@ import useHassStore from '../../stores/hass.store';
 import { useEntity } from '@hooks';
 import { useState, useEffect } from 'react';
 import Icon from '@components/icons';
-import { allLights } from 'configurations/all-lights';
 
-const AllLights = () => {
-  const entity_id = allLights.entity_id;
-
-  const entity_name = allLights.entity_name;
-
+const AllLights = ({ entity_name, entity_id }) => {
   const { connection } = useHassStore();
   const entity = useEntity(entity_id);
 

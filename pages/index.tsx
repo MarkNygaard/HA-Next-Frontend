@@ -1,19 +1,88 @@
 import React from 'react';
 import { StatusModal } from 'components/modals';
-
+import { gql, GraphQLClient } from 'graphql-request';
+import StandardButton from '@components/buttons/std-button';
+import AllLights from '@components/buttons/all-lights';
 import Layout from '@components/layout';
 
-const Home: React.FunctionComponent = () => {
+export default function Home({ allRooms, allLight }) {
   return (
     <div className="min-h-screen">
       <main className="container">
         <div className="flex w-screen">
-          <Layout>test</Layout>
+          <Layout>
+            <div className="flex flex-col">
+              <div className="flex max-w-5xl flex-wrap">
+                {allRooms.map((Room: any) => {
+                  return (
+                    <StandardButton
+                      key={Room.entityId}
+                      entity_name={Room.entityName}
+                      entity_id={Room.entityId}
+                      entity_icon={Room.icon.iconName}
+                      temp_id={Room.tempId}
+                      humid_id={Room.humidId}
+                      radiat_id={Room.radiatId}
+                      window_id={Room.windowId}
+                      door_id={Room.doorId}
+                      roomDetails={Room.subLight}
+                    />
+                  );
+                })}
+              </div>
+              <div>
+                <AllLights
+                  entity_name={allLight.entityName}
+                  entity_id={allLight.entityId}
+                />
+              </div>
+            </div>
+          </Layout>
           <StatusModal />
         </div>
       </main>
     </div>
   );
-};
+}
 
-export default Home;
+const query = gql`
+  query {
+    allRooms(orderBy: sorting_ASC) {
+      entityName
+      entityId
+      tempId
+      humidId
+      radiatId
+      windowId
+      doorId
+      icon {
+        iconName
+      }
+      subLight {
+        entityName
+        entityId
+        icon {
+          iconName
+        }
+      }
+    }
+    allLight {
+      entityName
+      entityId
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const endpoint = 'https://graphql.datocms.com/';
+  const graphQLClient = new GraphQLClient(endpoint, {
+    headers: {
+      'content-type': 'application/json',
+      authorization: 'Bearer ' + process.env.DATOCMS_API_KEY,
+    },
+  });
+  const allRooms = await graphQLClient.request(query);
+  return {
+    props: allRooms,
+  };
+}

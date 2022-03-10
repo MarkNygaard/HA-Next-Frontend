@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "fuse.js": "^6.4.6",
+    "graphql": "^16.3.0",
+    "graphql-request": "^4.0.0",
     "home-assistant-js-websocket": "^5.11.2",
     "lodash": "^4.17.21",
     "multicast-dns": "^7.2.4",

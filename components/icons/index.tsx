@@ -1,4 +1,4 @@
-import { BsLightbulbFill, BsLaptop } from 'react-icons/bs';
+import { BsLightbulbFill, BsLaptop, BsFillDoorOpenFill } from 'react-icons/bs';
 import {
   FaCouch,
   FaKey,
@@ -6,9 +6,19 @@ import {
   FaUtensils,
   FaTshirt,
   FaTemperatureLow,
+  FaSearchengin,
 } from 'react-icons/fa';
 import { MdShower, MdOutlineBrightnessMedium } from 'react-icons/md';
-import { GiTable, GiRoad, GiFlexibleLamp } from 'react-icons/gi';
+import {
+  GiTable,
+  GiRoad,
+  GiFlexibleLamp,
+  GiRoundShield,
+  GiHeatHaze,
+  GiWindow,
+} from 'react-icons/gi';
+import { AiOutlineHome } from 'react-icons/ai';
+import { HiOutlineLightBulb } from 'react-icons/hi';
 
 // Search icons at https://react-icons.github.io/react-icons/
 // Remember to Icon above and add it in the list below.
@@ -35,12 +45,26 @@ function Icon(props) {
       return <GiTable />;
     case 'Lightstrip':
       return <GiRoad />;
-    case 'CornorLamp':
+    case 'CornerLamp':
       return <GiFlexibleLamp />;
     case 'Brightness':
       return <MdOutlineBrightnessMedium />;
     case 'Temperature':
       return <FaTemperatureLow />;
+    case 'Home':
+      return <AiOutlineHome />;
+    case 'LightbulbShine':
+      return <HiOutlineLightBulb />;
+    case 'RobotVacuum':
+      return <GiRoundShield />;
+    case 'Search':
+      return <FaSearchengin />;
+    case 'Heating':
+      return <GiHeatHaze />;
+    case 'Door':
+      return <BsFillDoorOpenFill />;
+    case 'Window':
+      return <GiWindow />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }

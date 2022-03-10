@@ -57,7 +57,7 @@ export default function Navigation() {
         <div className="group flex items-center rounded-[75px] hover:bg-zinc-200 dark:hover:bg-zinc-700 md:px-4">
           <div className="flex-1">
             <a
-              href="/rooms"
+              href="#"
               className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg"
             >
               Rooms
