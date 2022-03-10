@@ -103,18 +103,29 @@ const StandardButton = ({
             {humid?.state ? <div className="px-2">{humid?.state}%</div> : <></>}
           </div>
         </button>
-        {roomDetails.map((room: any) => {
-          return (
-            <DetailsWindow
-              key={room.entityId}
-              allEntities={roomDetails}
-              entity_name={entity_name}
-              entity_id={entity_id}
-              open={isOpen}
-              onClose={() => setIsOpen(false)}
-            />
-          );
-        })}
+        {roomDetails.length ? (
+          roomDetails.map((room: any) => {
+            return (
+              <DetailsWindow
+                key={room.entityId}
+                allEntities={roomDetails}
+                entity_name={entity_name}
+                entity_id={entity_id}
+                open={isOpen}
+                onClose={() => setIsOpen(false)}
+              />
+            );
+          })
+        ) : (
+          <DetailsWindow
+            key={entity_id}
+            allEntities={roomDetails}
+            entity_name={entity_name}
+            entity_id={entity_id}
+            open={isOpen}
+            onClose={() => setIsOpen(false)}
+          />
+        )}
       </div>
     </div>
   );
