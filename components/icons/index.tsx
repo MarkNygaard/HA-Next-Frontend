@@ -19,6 +19,7 @@ import {
 } from 'react-icons/gi';
 import { AiOutlineHome } from 'react-icons/ai';
 import { HiOutlineLightBulb } from 'react-icons/hi';
+import { CeilingAurelle, AdoreAlt } from './hue-icons';
 
 // Search icons at https://react-icons.github.io/react-icons/
 // Remember to Icon above and add it in the list below.
@@ -65,6 +66,10 @@ function Icon(props) {
       return <BsFillDoorOpenFill />;
     case 'Window':
       return <GiWindow />;
+    case 'CeilingAurelle':
+      return <CeilingAurelle />;
+    case 'AdoreAlt':
+      return <AdoreAlt />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }
