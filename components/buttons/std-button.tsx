@@ -88,9 +88,9 @@ const StandardButton = ({
           <div className="flex w-full justify-center divide-x text-xs font-thin text-white dark:divide-zinc-800 dark:text-black">
             {temp?.state ? (
               <div className="flex px-2">
-                <div>{temp?.state} °C </div>
-                {radiat?.state ? (
-                  radiat?.state === 'heating' ? (
+                <div>{temp?.state} °C</div>
+                {radiat ? (
+                  radiat?.attributes.hvac_action === 'heating' ? (
                     <div className="pl-1 text-white dark:text-black/50">
                       <Icon symbol="Heating" />
                     </div>

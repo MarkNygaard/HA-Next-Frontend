@@ -5,6 +5,7 @@ import { useEntity } from '@hooks';
 import Icon from '@components/icons';
 import Brightness from '@components/properties/brightness';
 import ColorTemp from '@components/properties/color-temp';
+import Climate from '@components/properties/climate';
 
 export default function DetailsWindow({
   open,
@@ -46,6 +47,7 @@ export default function DetailsWindow({
                   <div className="flex flex-col divide-y divide-solid divide-zinc-900 pb-4">
                     <ColorTemp entity_id={entity_id} />
                     <Brightness entity_id={entity_id} />
+                    <Climate entity_id={entity_id} />
                   </div>
                 </div>
               </div>
