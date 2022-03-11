@@ -11,7 +11,6 @@ import {
 import { MdShower, MdOutlineBrightnessMedium } from 'react-icons/md';
 import {
   GiTable,
-  GiRoad,
   GiFlexibleLamp,
   GiRoundShield,
   GiHeatHaze,
@@ -19,10 +18,11 @@ import {
 } from 'react-icons/gi';
 import { AiOutlineHome } from 'react-icons/ai';
 import { HiOutlineLightBulb } from 'react-icons/hi';
-import { CeilingAurelle, AdoreAlt } from './hue-icons';
+import { CeilingAurelle, AdoreAlt, Lightstrip } from './hue-icons';
 
-// Search icons at https://react-icons.github.io/react-icons/
+// Search icons at https://react-icons.github.io/react-icons/ & https://github.com/arallsopp/hass-hue-icons
 // Remember to Icon above and add it in the list below.
+// Icons from https://github.com/arallsopp/hass-hue-icons should be translated from bulb-filament to BulbFilament when added
 
 function Icon(props) {
   switch (props.symbol) {
@@ -45,7 +45,7 @@ function Icon(props) {
     case 'Table':
       return <GiTable />;
     case 'Lightstrip':
-      return <GiRoad />;
+      return <Lightstrip />;
     case 'CornerLamp':
       return <GiFlexibleLamp />;
     case 'Brightness':
