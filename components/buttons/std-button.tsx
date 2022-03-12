@@ -72,7 +72,7 @@ const StandardButton = ({
               </div>
             )}
           </div>
-          <div className="flex w-full justify-center px-8 text-4xl text-tile-svg dark:text-black/50 sm:px-12 sm:text-6xl">
+          <div className="flex w-full justify-center text-4xl text-tile-svg dark:text-black/50 sm:px-12 sm:text-6xl">
             <Icon symbol={entity_icon} />
           </div>
         </button>
@@ -89,7 +89,7 @@ const StandardButton = ({
               {entity_name}
             </div>
           )}
-          <div className="flex w-full justify-center divide-x pb-1 text-xs text-white dark:divide-zinc-800 dark:text-black sm:pb-0 sm:font-thin">
+          <div className="flex w-full justify-center divide-x pb-1 text-[0.65rem] text-white dark:divide-zinc-800 dark:text-black sm:pb-0 sm:text-xs sm:font-thin">
             {temp?.state ? (
               <div className="flex px-2">
                 <div>{temp?.state} °C</div>
