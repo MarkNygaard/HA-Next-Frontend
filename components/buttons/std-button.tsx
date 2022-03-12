@@ -55,7 +55,7 @@ const StandardButton = ({
           onClick={toggle}
           type="button"
         >
-          <div className="flex w-full justify-end">
+          <div className="flex w-full justify-end p-2">
             <div className="text-xl">
               {window?.state === 'on' ? <Icon symbol="Window" /> : null}
             </div>
@@ -72,7 +72,7 @@ const StandardButton = ({
               </div>
             )}
           </div>
-          <div className="flex w-full justify-center px-8 text-6xl text-tile-svg dark:text-black/50 sm:px-12">
+          <div className="flex w-full justify-center px-8 text-4xl text-tile-svg dark:text-black/50 sm:px-12 sm:text-6xl">
             <Icon symbol={entity_icon} />
           </div>
         </button>
@@ -81,15 +81,15 @@ const StandardButton = ({
           onClick={() => setIsOpen(true)}
         >
           {state === 'on' ? (
-            <div className="flex w-full justify-center pt-3 text-xl font-normal text-white dark:text-black">
+            <div className="flex w-full justify-center pt-3 text-lg font-normal text-white dark:text-black sm:text-xl">
               {entity_name}
             </div>
           ) : (
-            <div className="flex w-full justify-center pt-3 text-xl font-normal text-white dark:text-black/50">
+            <div className="flex w-full justify-center pt-3 text-lg font-normal text-white dark:text-black/50 sm:text-xl">
               {entity_name}
             </div>
           )}
-          <div className="flex w-full justify-center divide-x text-xs font-thin text-white dark:divide-zinc-800 dark:text-black">
+          <div className="flex w-full justify-center divide-x pb-1 text-xs text-white dark:divide-zinc-800 dark:text-black sm:pb-0 sm:font-thin">
             {temp?.state ? (
               <div className="flex px-2">
                 <div>{temp?.state} °C</div>
