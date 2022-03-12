@@ -72,7 +72,7 @@ const StandardButton = ({
               </div>
             )}
           </div>
-          <div className="flex w-full justify-center text-4xl text-tile-svg dark:text-black/50 sm:px-12 sm:text-6xl">
+          <div className="flex w-full justify-center text-4xl text-tile-svg dark:text-black/50 sm:text-6xl">
             <Icon symbol={entity_icon} />
           </div>
         </button>
