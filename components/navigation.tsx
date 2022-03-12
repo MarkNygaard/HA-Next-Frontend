@@ -11,16 +11,16 @@ export default function Navigation() {
   const { connection } = useHass();
 
   return (
-    <div className="flex h-screen w-3/12 flex-col border-r-8 bg-white dark:border-luke-border dark:bg-luke-nav">
-      <div className="h-screen w-full space-y-1 px-3 pt-12 pb-3">
-        <div className="rounded-sm text-center text-6xl font-thin text-zinc-600 dark:text-zinc-400 sm:text-7xl lg:text-8xl">
+    <div className="flex h-screen flex-col border-r-2 bg-white dark:border-luke-border dark:bg-luke-nav sm:w-4/12 sm:border-r-8 xl:w-3/12">
+      <div className="h-screen w-full space-y-1 pb-3 pt-3 sm:px-3 sm:pt-12">
+        <div className="hidden justify-center rounded-sm text-center text-6xl font-thin text-zinc-600 dark:text-zinc-400 sm:flex sm:text-7xl lg:text-8xl">
           {dateState.toLocaleString('da-DK', {
             hour: 'numeric',
             minute: 'numeric',
             hour12: false,
           })}
         </div>
-        <div className="rounded-sm pb-6 text-center text-sm font-light capitalize text-zinc-800 dark:text-zinc-600 lg:text-base">
+        <div className="hidden justify-center rounded-sm pb-6 text-center text-sm font-light capitalize text-zinc-800 dark:text-zinc-600 sm:flex lg:text-base">
           {dateState.toLocaleDateString('da-DK', {
             weekday: 'long',
             day: 'numeric',
@@ -28,8 +28,8 @@ export default function Navigation() {
             year: 'numeric',
           })}
         </div>
-        <div className="group flex items-center rounded-[75px] font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 md:px-4">
-          <div className="flex-1">
+        <div className="group flex items-center rounded-[75px] font-medium dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+          <div className="hidden flex-1 sm:flex">
             <a
               href="/"
               className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg"
@@ -37,7 +37,7 @@ export default function Navigation() {
               Home
             </a>
           </div>
-          <div className="px-4">
+          <div className="p-2 sm:px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="group-hover:zinc-800 h-6 w-6 text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200"
@@ -54,8 +54,8 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-        <div className="group flex items-center rounded-[75px] hover:bg-zinc-200 dark:hover:bg-zinc-700 md:px-4">
-          <div className="flex-1">
+        <div className="group flex items-center rounded-[75px] dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+          <div className="hidden flex-1 sm:flex">
             <a
               href="#"
               className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg"
@@ -63,7 +63,7 @@ export default function Navigation() {
               Rooms
             </a>
           </div>
-          <div className="px-4">
+          <div className="p-2 sm:px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="group-hover:zinc-800 h-6 w-6 text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200"
@@ -80,8 +80,8 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-        <div className="group flex items-center rounded-[75px] font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 md:px-4">
-          <div className="flex-1">
+        <div className="group flex items-center rounded-[75px] font-medium dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+          <div className="hidden flex-1 sm:flex">
             <a
               href="/clean"
               className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg"
@@ -89,7 +89,7 @@ export default function Navigation() {
               Clean
             </a>
           </div>
-          <div className="px-4">
+          <div className="p-2 sm:px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="group-hover:zinc-800 h-6 w-6 text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200"
@@ -106,8 +106,8 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-        <div className="group flex items-center rounded-[75px] font-medium hover:bg-zinc-200 dark:hover:bg-zinc-700 md:px-4">
-          <div className="flex-1">
+        <div className="group flex items-center rounded-[75px] font-medium dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+          <div className="hidden flex-1 sm:flex">
             <a
               href="/entities"
               className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg"
@@ -115,7 +115,7 @@ export default function Navigation() {
               Search Entities
             </a>
           </div>
-          <div className="px-4">
+          <div className="p-2 sm:px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 460 512"
@@ -129,7 +129,7 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-      <div className="hover:zinc-800 flex p-3 text-zinc-900 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200">
+      <div className="hover:zinc-800 hidden p-3 text-zinc-900 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 sm:flex">
         <button onClick={() => logout(connection)}>Log Out</button>
       </div>
     </div>

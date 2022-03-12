@@ -48,10 +48,14 @@ const StandardButton = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex max-w-xs p-2">
-      <div className="m-4 flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600">
-        <button className="flex-col" onClick={toggle} type="button">
-          <div className="flex justify-end">
+    <div className="flex w-full justify-center">
+      <div className="w-full flex-col justify-center rounded-xl bg-tile-bg p-1 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-4">
+        <button
+          className="flex w-full flex-col justify-center"
+          onClick={toggle}
+          type="button"
+        >
+          <div className="flex w-full justify-end">
             <div className="text-xl">
               {window?.state === 'on' ? <Icon symbol="Window" /> : null}
             </div>
@@ -68,12 +72,12 @@ const StandardButton = ({
               </div>
             )}
           </div>
-          <div className="flex justify-center px-12 text-6xl text-tile-svg dark:text-black/50">
+          <div className="flex w-full justify-center px-8 text-6xl text-tile-svg dark:text-black/50 sm:px-12">
             <Icon symbol={entity_icon} />
           </div>
         </button>
         <button
-          className="flex w-full flex-col"
+          className="flex w-full flex-col justify-center"
           onClick={() => setIsOpen(true)}
         >
           {state === 'on' ? (

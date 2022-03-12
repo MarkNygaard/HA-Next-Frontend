@@ -11,8 +11,8 @@ export default function Home({ allRooms, allLight }) {
       <main className="container">
         <div className="flex w-screen">
           <Layout>
-            <div className="flex flex-col">
-              <div className="grid max-w-5xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="flex w-full max-w-sm flex-col justify-center lg:max-w-xl xl:max-w-3xl">
+              <div className="xl-gap-6 grid grid-cols-2 gap-2 p-2 pt-2 lg:grid-cols-3  lg:gap-4 xl:grid-cols-4">
                 {allRooms.map((Room: any) => {
                   return (
                     <StandardButton
