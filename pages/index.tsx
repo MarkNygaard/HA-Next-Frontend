@@ -12,7 +12,7 @@ export default function Home({ allRooms, allLight }) {
         <div className="flex w-screen">
           <Layout>
             <div className="flex flex-col">
-              <div className="flex max-w-5xl flex-wrap">
+              <div className="grid max-w-5xl grid-cols-4">
                 {allRooms.map((Room: any) => {
                   return (
                     <StandardButton
