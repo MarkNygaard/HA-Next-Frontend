@@ -28,7 +28,7 @@ export default function Navigation() {
             year: 'numeric',
           })}
         </div>
-        <div className="group flex items-center rounded-[75px] font-medium dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+        <div className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4">
           <div className="hidden flex-1 sm:flex">
             <a
               href="/"
@@ -54,7 +54,7 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-        <div className="group flex items-center rounded-[75px] dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+        <div className="group flex items-center rounded-[75px] sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4">
           <div className="hidden flex-1 sm:flex">
             <a
               href="#"
@@ -80,7 +80,7 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-        <div className="group flex items-center rounded-[75px] font-medium dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+        <div className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4">
           <div className="hidden flex-1 sm:flex">
             <a
               href="/clean"
@@ -106,7 +106,7 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-        <div className="group flex items-center rounded-[75px] font-medium dark:hover:bg-zinc-700 sm:hover:bg-zinc-200 md:px-4">
+        <div className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4">
           <div className="hidden flex-1 sm:flex">
             <a
               href="/entities"

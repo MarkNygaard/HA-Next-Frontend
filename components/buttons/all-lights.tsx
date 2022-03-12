@@ -29,7 +29,7 @@ const AllLights = ({ entity_name, entity_id }) => {
   };
 
   return (
-    <div className="flex max-w-5xl p-2">
+    <div className="flex max-w-5xl p-4">
       <button
         className="flex w-full items-center justify-center rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600"
         onClick={toggle}
