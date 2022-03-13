@@ -23,7 +23,12 @@ import {
 } from 'react-icons/gi';
 import { AiOutlineHome } from 'react-icons/ai';
 import { HiOutlineLightBulb } from 'react-icons/hi';
-import { CeilingAurelle, AdoreAlt, Lightstrip } from './hue-icons';
+import {
+  CeilingAurelle,
+  AdoreAlt,
+  Lightstrip,
+  PendantBeing,
+} from './hue-icons';
 import { LightDark } from './svg/light-dark';
 
 // Search icons at https://react-icons.github.io/react-icons/ & https://github.com/arallsopp/hass-hue-icons
@@ -32,8 +37,8 @@ import { LightDark } from './svg/light-dark';
 
 function Icon(props) {
   switch (props.symbol) {
-    case 'LightDark':
-      return <LightDark />;
+    case 'PendantBeing':
+      return <PendantBeing />;
     case 'Lightbulb':
       return <BsLightbulbFill />;
     case 'Couch':
@@ -80,6 +85,8 @@ function Icon(props) {
       return <AdoreAlt />;
     case 'Settings':
       return <BsGearWideConnected />;
+    case 'LightDark':
+      return <LightDark />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }
