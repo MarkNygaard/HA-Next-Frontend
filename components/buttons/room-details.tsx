@@ -30,9 +30,13 @@ function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
   };
 
   return (
-    <div className="m-4 flex flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600">
-      <button className="flex-col" onClick={toggle} type="button">
-        <div className="flex justify-end">
+    <div className="flex flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600">
+      <button
+        className="flex w-full flex-col justify-center"
+        onClick={toggle}
+        type="button"
+      >
+        <div className="flex w-full justify-end">
           {state === 'on' ? (
             <div className="text-2xl text-yellow-300">
               <Icon symbol="Lightbulb" />
@@ -43,7 +47,7 @@ function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
             </div>
           )}
         </div>
-        <div className="flex justify-center px-12 text-6xl text-tile-svg dark:text-black/50">
+        <div className="flex w-full justify-center text-6xl text-tile-svg dark:text-black/50">
           <Icon symbol={entity_icon} />
         </div>
       </button>

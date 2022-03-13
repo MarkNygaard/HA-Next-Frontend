@@ -39,6 +39,7 @@ export default function ColorTemp({ entity_id }) {
             value={colorTemp}
             onChange={(e) => setColorTemp(parseInt(e.target.value, 10))}
             onMouseUp={colorTempOnChange}
+            onTouchEnd={colorTempOnChange}
             className="mx-2 mb-3 h-1 w-[90%] appearance-none rounded-md bg-blue-500"
           />
         </div>

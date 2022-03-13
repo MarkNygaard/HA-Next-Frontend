@@ -6,7 +6,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <div className="flex max-h-screen w-full">
       <Navigation />
-      <div className="relative flex min-h-screen w-full items-start justify-center bg-gray-100 dark:bg-luke-bg sm:items-center">
+      <div className="dark:bg-darkmode-bg relative flex min-h-screen w-full items-start justify-center bg-gray-100 sm:items-center">
         <div className="relative flex">
           <div className="relative max-w-lg">
             <div className="absolute left-0 -bottom-20 animate-blob rounded-full bg-purple-300 opacity-50 blur-xl filter dark:mix-blend-overlay md:h-64 md:w-64 xl:h-96 xl:w-96"></div>

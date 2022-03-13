@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth, useHass } from '@hooks';
+import Icon from '@components/icons';
 
 export default function Navigation() {
   const [dateState, setDateState] = useState(new Date());
@@ -11,7 +12,7 @@ export default function Navigation() {
   const { connection } = useHass();
 
   return (
-    <div className="flex h-screen flex-col border-r-2 bg-white dark:border-luke-border dark:bg-luke-nav sm:w-4/12 sm:border-r-8 xl:w-3/12">
+    <div className="flex h-screen flex-col border-r-2 border-zinc-200 bg-white dark:border-darkmode-border dark:bg-darkmode-nav sm:w-4/12 sm:border-r-4 xl:w-3/12">
       <div className="h-screen w-full space-y-1 pb-3 pt-3 sm:px-3 sm:pt-12">
         <div className="hidden justify-center rounded-sm text-center text-6xl font-thin text-zinc-600 dark:text-zinc-400 sm:flex sm:text-7xl lg:text-8xl">
           {dateState.toLocaleString('da-DK', {
@@ -54,7 +55,7 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-        <div className="group flex items-center rounded-[75px] sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4">
+        <div className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4">
           <div className="hidden flex-1 sm:flex">
             <a
               href="#"
@@ -128,9 +129,19 @@ export default function Navigation() {
             </svg>
           </div>
         </div>
-      </div>
-      <div className="hover:zinc-800 hidden p-3 text-zinc-900 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 sm:flex">
-        <button onClick={() => logout(connection)}>Log Out</button>
+        <div className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4">
+          <div className="hidden flex-1 sm:flex">
+            <a
+              href="/settings"
+              className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg"
+            >
+              Settings
+            </a>
+          </div>
+          <div className="p-2 text-xl sm:px-4">
+            <Icon symbol="Settings" />
+          </div>
+        </div>
       </div>
     </div>
   );

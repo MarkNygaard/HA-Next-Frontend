@@ -12,7 +12,7 @@ export default function Home({ allRooms, allLight }) {
         <div className="flex w-screen">
           <Layout>
             <div className="flex w-full max-w-xs flex-col justify-center sm:max-w-sm md:max-w-xl xl:max-w-3xl">
-              <div className="xl-gap-6 grid grid-cols-2 gap-4 p-4 md:grid-cols-3 xl:grid-cols-4">
+              <div className="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 xl:grid-cols-4 xl:gap-6">
                 {allRooms.map((Room: any) => {
                   return (
                     <StandardButton
@@ -22,7 +22,7 @@ export default function Home({ allRooms, allLight }) {
                       entity_icon={Room.icon.iconName}
                       temp_id={Room.tempId}
                       humid_id={Room.humidId}
-                      radiat_id={Room.radiatId}
+                      climate_id={Room.climateId}
                       window_id={Room.windowId}
                       door_id={Room.doorId}
                       roomDetails={Room.subLight}
@@ -52,7 +52,7 @@ const query = gql`
       entityId
       tempId
       humidId
-      radiatId
+      climateId
       windowId
       doorId
       icon {

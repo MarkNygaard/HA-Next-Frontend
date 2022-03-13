@@ -11,7 +11,7 @@ const StandardButton = ({
   entity_icon,
   temp_id,
   humid_id,
-  radiat_id,
+  climate_id,
   window_id,
   door_id,
   roomDetails,
@@ -21,7 +21,7 @@ const StandardButton = ({
 
   const temp = useEntity(temp_id);
   const humid = useEntity(humid_id);
-  const radiat = useEntity(radiat_id);
+  const climate = useEntity(climate_id);
   const window = useEntity(window_id);
   const door = useEntity(door_id);
 
@@ -55,7 +55,7 @@ const StandardButton = ({
           onClick={toggle}
           type="button"
         >
-          <div className="flex w-full justify-end p-2">
+          <div className="flex w-full justify-end px-2">
             <div className="text-xl">
               {window?.state === 'on' ? <Icon symbol="Window" /> : null}
             </div>
@@ -81,7 +81,7 @@ const StandardButton = ({
           onClick={() => setIsOpen(true)}
         >
           {state === 'on' ? (
-            <div className="flex w-full justify-center pt-3 text-lg font-normal text-white dark:text-black sm:text-xl">
+            <div className="flex w-full justify-center pt-2 text-lg font-normal text-white dark:text-black sm:text-xl">
               {entity_name}
             </div>
           ) : (
@@ -90,11 +90,22 @@ const StandardButton = ({
             </div>
           )}
           <div className="flex w-full justify-center divide-x pb-1 text-[0.65rem] text-white dark:divide-zinc-800 dark:text-black sm:pb-0 sm:text-xs sm:font-thin">
-            {temp?.state ? (
+            {climate?.attributes.current_temperature ? (
+              <div className="flex px-2">
+                <div>{climate?.attributes.current_temperature} °C</div>
+                {climate ? (
+                  climate?.attributes.hvac_action === 'heating' ? (
+                    <div className="pl-1 text-white dark:text-black/50">
+                      <Icon symbol="Heating" />
+                    </div>
+                  ) : null
+                ) : null}
+              </div>
+            ) : temp?.state ? (
               <div className="flex px-2">
                 <div>{temp?.state} °C</div>
-                {radiat ? (
-                  radiat?.attributes.hvac_action === 'heating' ? (
+                {climate ? (
+                  climate?.attributes.hvac_action === 'heating' ? (
                     <div className="pl-1 text-white dark:text-black/50">
                       <Icon symbol="Heating" />
                     </div>
@@ -104,6 +115,7 @@ const StandardButton = ({
             ) : (
               <></>
             )}
+
             {humid?.state ? <div className="px-2">{humid?.state}%</div> : <></>}
           </div>
         </button>
@@ -115,6 +127,7 @@ const StandardButton = ({
                 allEntities={roomDetails}
                 entity_name={entity_name}
                 entity_id={entity_id}
+                climate_id={climate_id}
                 open={isOpen}
                 onClose={() => setIsOpen(false)}
               />
@@ -126,6 +139,7 @@ const StandardButton = ({
             allEntities={roomDetails}
             entity_name={entity_name}
             entity_id={entity_id}
+            climate_id={climate_id}
             open={isOpen}
             onClose={() => setIsOpen(false)}
           />

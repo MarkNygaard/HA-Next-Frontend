@@ -3,9 +3,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'luke-bg': 'rgba(43,45,47,255)',
-        'luke-nav': 'rgba(29,32,34,255)',
-        'luke-border': 'rgba(25,28,30,255)',
+        'darkmode-bg': 'rgba(43,45,47,255)',
+        'darkmode-nav': 'rgba(29,32,34,255)',
+        'darkmode-border': 'rgba(25,28,30,255)',
         'tile-bg': 'rgba(91,182,118,255)',
         'tile-bg-hover': 'rgba(85,167,111,1.0)',
         'tile-svg': 'rgba(74,145,96,255)',

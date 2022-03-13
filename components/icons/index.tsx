@@ -1,4 +1,9 @@
-import { BsLightbulbFill, BsLaptop, BsFillDoorOpenFill } from 'react-icons/bs';
+import {
+  BsLightbulbFill,
+  BsLaptop,
+  BsFillDoorOpenFill,
+  BsGearWideConnected,
+} from 'react-icons/bs';
 import {
   FaCouch,
   FaKey,
@@ -19,6 +24,7 @@ import {
 import { AiOutlineHome } from 'react-icons/ai';
 import { HiOutlineLightBulb } from 'react-icons/hi';
 import { CeilingAurelle, AdoreAlt, Lightstrip } from './hue-icons';
+import { LightDark } from './svg/light-dark';
 
 // Search icons at https://react-icons.github.io/react-icons/ & https://github.com/arallsopp/hass-hue-icons
 // Remember to Icon above and add it in the list below.
@@ -26,6 +32,8 @@ import { CeilingAurelle, AdoreAlt, Lightstrip } from './hue-icons';
 
 function Icon(props) {
   switch (props.symbol) {
+    case 'LightDark':
+      return <LightDark />;
     case 'Lightbulb':
       return <BsLightbulbFill />;
     case 'Couch':
@@ -70,6 +78,8 @@ function Icon(props) {
       return <CeilingAurelle />;
     case 'AdoreAlt':
       return <AdoreAlt />;
+    case 'Settings':
+      return <BsGearWideConnected />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }
