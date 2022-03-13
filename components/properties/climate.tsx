@@ -85,8 +85,8 @@ export default function Climate({ entity_id }) {
                 onAfterChange={temperatureOnChange}
                 overrideStyle={
                   hvac === 'heating'
-                    ? 'svg{background: #e36304; border-radius:100%} path{stroke-width:9px; stroke:#FFF} .sliderHandle:after{width:15px; height:15px; background: #FFF; border-color: #e36304}'
-                    : 'svg{background: #003cec; border-radius: 100%} path{stroke-width:9px; stroke:#FFF} .sliderHandle:after{width:15px; height:15px; background: #FFF; border-color: #003cec}'
+                    ? 'svg{background: linear-gradient(#f29568,#ed6704); border-radius:100%} path{stroke-width:9px; stroke:#FFF} .sliderHandle:after{width:15px; height:15px; background: #FFF; border-color: #e36304}'
+                    : 'svg{background: linear-gradient(#3d60ef,#003cec); border-radius: 100%} path{stroke-width:9px; stroke:#FFF} .sliderHandle:after{width:15px; height:15px; background: #FFF; border-color: #003cec}'
                 }
               />
             </div>
