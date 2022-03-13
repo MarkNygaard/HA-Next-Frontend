@@ -19,7 +19,7 @@ export default function Brightness({ entity_id }) {
   const brightnessOnChange = (e) => {
     setBrightness(parseInt(e.target.value, 10));
     callService(connection, 'light', 'turn_on', {
-      entity_id,
+      entity_id: entity_id,
       brightness: brightness,
     });
   };
@@ -37,7 +37,7 @@ export default function Brightness({ entity_id }) {
             min={0}
             max={255}
             value={brightness}
-            onChange={(e) => setBrightness(parseInt(e.target.value, 10))}
+            onChange={(e) => setBrightness(e.target.value)}
             onMouseUp={brightnessOnChange}
             onTouchEnd={brightnessOnChange}
             className="mx-2 h-1 w-full appearance-none rounded-md bg-blue-500"

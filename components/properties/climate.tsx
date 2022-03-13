@@ -21,7 +21,7 @@ export default function Climate({ entity_id }) {
   }, [entity]);
 
   const temperatureOnChange = (e) => {
-    setTemperature(parseInt(e.target.value, 10));
+    setTemperature(parseFloat(e));
     callService(connection, 'climate', 'set_temperature', {
       entity_id: entity_id,
       temperature: temperature,
@@ -33,28 +33,35 @@ export default function Climate({ entity_id }) {
       <div className="flex w-full justify-center pt-4">
         Current temp {currentTemp}
       </div>
-      <div className="flex w-full justify-center pb-4">
-        Set to {temperature}
-      </div>
-      <div className="flex w-full justify-center">
-        <Roundy
-          value={temperature}
-          arcSize={270}
-          rotationOffset={-45}
-          min={10}
-          max={40}
-          stepSize={1}
-          radius={100}
-          strokeWidth={35}
-          sliced={false}
-          thumbWidth={5}
-          color="rgba(74,145,96,255)"
-          bgColor="#FFF"
-          onChange={(e) => setTemperature(parseInt(e.target.value, 10))}
-          onMouseUp={temperatureOnChange}
-          //overrideStyle={}
-        />
-      </div>
+
+      {entity_id ? (
+        <div className="flex w-full flex-col justify-center">
+          <div className="flex w-full justify-center pb-4">
+            Set to {temperature}
+          </div>
+          <div className="flex justify-center">
+            <Roundy
+              arcSize={270}
+              rotationOffset={-45}
+              min={entity?.attributes.min_temp}
+              max={entity?.attributes.max_temp}
+              stepSize={1}
+              radius={100}
+              strokeWidth={20}
+              sliced={false}
+              thumbSize={15}
+              color="rgba(74,145,96,255)"
+              bgColor="#FFF"
+              value={temperature}
+              onChange={(e) => setTemperature(e)}
+              onAfterChange={temperatureOnChange}
+              overrideStyle={
+                'path{stroke-width:5px} .sliderHandle:after{width:15px; height:15px; background: rgba(74,145,96,255); border: rgba(74,145,96,255)}'
+              }
+            />
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
