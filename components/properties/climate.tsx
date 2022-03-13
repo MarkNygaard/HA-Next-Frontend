@@ -59,11 +59,7 @@ export default function Climate({ entity_id }) {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="flex w-full justify-center pt-4">
-        Current temp {currentTemp}
-      </div>
-
+    <div className="flex flex-col pt-4">
       {entity_id ? (
         <div className="flex flex-col justify-center">
           <div className="relative w-full flex-col justify-center">
@@ -90,11 +86,14 @@ export default function Climate({ entity_id }) {
                 }
               />
             </div>
-            <div className="absolute right-0 top-[30%] left-0 mx-auto w-[100px] text-center text-6xl font-medium text-white">
-              {temperature}
+            <div className="absolute right-0 top-[32%] left-0 mx-auto w-[100px] text-center text-5xl font-medium text-white">
+              {currentTemp}
             </div>
-            <div className="absolute right-0 bottom-[12%] left-0 mx-auto w-[100px] text-center uppercase text-white">
+            <div className="absolute right-0 bottom-[10%] left-0 mx-auto w-[100px] text-center font-extralight uppercase text-white">
               {hvac}
+            </div>
+            <div className="absolute right-0 bottom-[20%] left-0 mx-auto w-[100px] text-center uppercase text-white">
+              {temperature}
             </div>
           </div>
           <div className="flex w-full justify-center">
