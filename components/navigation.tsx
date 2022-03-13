@@ -113,7 +113,7 @@ export default function Navigation() {
               href="/entities"
               className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg"
             >
-              Search Entities
+              Search
             </a>
           </div>
           <div className="p-2 sm:px-4">
@@ -138,7 +138,7 @@ export default function Navigation() {
               Settings
             </a>
           </div>
-          <div className="p-2 text-xl sm:px-4">
+          <div className="p-2 text-xl text-zinc-900 dark:text-zinc-400 sm:px-4">
             <Icon symbol="Settings" />
           </div>
         </div>

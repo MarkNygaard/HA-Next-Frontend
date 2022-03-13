@@ -38,21 +38,21 @@ function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
       >
         <div className="flex w-full justify-end">
           {state === 'on' ? (
-            <div className="text-2xl text-yellow-300">
+            <div className="text-lg text-yellow-300 sm:text-2xl">
               <Icon symbol="Lightbulb" />
             </div>
           ) : (
-            <div className="text-2xl text-white dark:text-black/50">
+            <div className="text-lg text-white dark:text-black/50 sm:text-2xl">
               <Icon symbol="Lightbulb" />
             </div>
           )}
         </div>
-        <div className="flex w-full justify-center text-6xl text-tile-svg dark:text-black/50">
+        <div className="flex w-full justify-center text-4xl text-tile-svg dark:text-black/50 sm:text-6xl">
           <Icon symbol={entity_icon} />
         </div>
       </button>
       <button className="flex w-full flex-col">
-        <div className="flex w-full justify-center pt-3 text-xl font-normal text-white dark:text-black">
+        <div className="flex w-full justify-center pt-3 text-base font-normal text-white dark:text-black sm:text-xl">
           {entity_name}
         </div>
         <div className="flex w-full justify-center text-xs font-thin text-white"></div>

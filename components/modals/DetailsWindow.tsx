@@ -19,7 +19,7 @@ export default function DetailsWindow({
 
   // TODO set rightside div to change when focus changes on lights (tab on buttom half)
   return (
-    <div className="fixed inset-0 overflow-y-auto p-4 pt-[10vh]">
+    <div className="fixed inset-0 overflow-y-auto p-4 pl-[9vh] pt-[3vh] sm:pl-[3vh] sm:pt-[10vh]">
       <div
         className="fixed inset-0 bg-gray-500/25 transition-opacity"
         onClick={onClose}
@@ -28,7 +28,7 @@ export default function DetailsWindow({
         {allEntities.length ? (
           <div className="flex w-full flex-col sm:flex-row">
             <div className="flex w-full flex-col p-4 sm:w-3/5">
-              <p className="grid grid-cols-2 justify-center gap-3 py-4 text-center text-zinc-900">
+              <p className="grid grid-cols-4 justify-center gap-3 py-4 text-center text-zinc-900 sm:grid-cols-2">
                 {allEntities.map((allEntities: any) => {
                   return (
                     <RoomDetails
