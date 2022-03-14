@@ -49,18 +49,18 @@ const StandardButton = ({
 
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full flex-col justify-center rounded-xl bg-tile-bg p-1 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-4">
+      <div className="w-full flex-col justify-center rounded-xl bg-tile-bg p-1 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-3">
         <button
           className="flex w-full flex-col justify-center"
           onClick={toggle}
           type="button"
         >
-          <div className="flex w-full justify-end px-2">
-            <div className="text-xl">
-              {window?.state === 'on' ? <Icon symbol="Window" /> : null}
-            </div>
-            <div className="text-xl">
+          <div className="flex w-full justify-end px-2 pb-1">
+            <div className="pr-1 text-xl text-tile-svg">
               {door?.state === 'on' ? <Icon symbol="Door" /> : null}
+            </div>
+            <div className="pr-1 text-lg text-tile-svg">
+              {window?.state === 'on' ? <Icon symbol="Window" /> : null}
             </div>
             {state === 'on' ? (
               <div className="text-xl text-yellow-300">
@@ -81,11 +81,11 @@ const StandardButton = ({
           onClick={() => setIsOpen(true)}
         >
           {state === 'on' ? (
-            <div className="flex w-full justify-center pt-2 text-lg font-normal text-white dark:text-black sm:text-xl">
+            <div className="flex w-full justify-center pt-1 text-lg font-normal text-white dark:text-black sm:pt-2 sm:text-xl">
               {entity_name}
             </div>
           ) : (
-            <div className="flex w-full justify-center pt-3 text-lg font-normal text-white dark:text-black/50 sm:text-xl">
+            <div className="flex w-full justify-center pt-1 text-lg font-normal text-white dark:text-black/50 sm:pt-2 sm:text-xl">
               {entity_name}
             </div>
           )}

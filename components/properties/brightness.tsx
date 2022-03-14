@@ -26,7 +26,7 @@ export default function Brightness({ entity_id }) {
 
   return (
     <div className="w-full">
-      <p className="pt-4 pb-2">Brightness</p>
+      <p className="pt-2 pb-2 sm:pt-4">Brightness</p>
       <div className="mb-3 flex w-full items-center">
         <div className="px-2">
           <Icon symbol="Brightness" />
@@ -35,7 +35,7 @@ export default function Brightness({ entity_id }) {
           <input
             type="range"
             min={0}
-            max={255}
+            max={254}
             value={brightness}
             onChange={(e) => setBrightness(e.target.value)}
             onMouseUp={brightnessOnChange}
@@ -44,7 +44,7 @@ export default function Brightness({ entity_id }) {
           />
         </div>
         <div className="flex rounded-md bg-zinc-400 px-1 font-light">
-          {Math.floor((brightness / 255) * 100)}%
+          {Math.ceil((brightness / 255) * 100)}%
         </div>
       </div>
     </div>

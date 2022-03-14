@@ -29,7 +29,7 @@ import {
   Lightstrip,
   PendantBeing,
 } from './hue-icons';
-import { LightDark } from './svg/light-dark';
+import { LightDark, OpenDoor, OpenWindow } from './misc';
 
 // Search icons at https://react-icons.github.io/react-icons/ & https://github.com/arallsopp/hass-hue-icons
 // Remember to Icon above and add it in the list below.
@@ -76,9 +76,9 @@ function Icon(props) {
     case 'Heating':
       return <GiHeatHaze />;
     case 'Door':
-      return <BsFillDoorOpenFill />;
+      return <OpenDoor />;
     case 'Window':
-      return <GiWindow />;
+      return <OpenWindow />;
     case 'CeilingAurelle':
       return <CeilingAurelle />;
     case 'AdoreAlt':

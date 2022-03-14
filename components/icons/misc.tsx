@@ -11,4 +11,26 @@ function LightDark() {
   );
 }
 
-export { LightDark };
+function OpenDoor() {
+  return (
+    <svg viewBox="0 0 24 24" height="1em" width="1em" fill="currentColor">
+      <path
+        fill="currentColor"
+        d="M12,3C10.89,3 10,3.89 10,5H3V19H2V21H22V19H21V5C21,3.89 20.11,3 19,3H12M12,5H19V19H12V5M5,11H7V13H5V11Z"
+      />
+    </svg>
+  );
+}
+
+function OpenWindow() {
+  return (
+    <svg viewBox="0 0 24 24" height="1em" width="1em" fill="currentColor">
+      <path
+        fill="currentColor"
+        d="M21 20V2H3V20H1V23H23V20M19 4V11H17V4M5 4H7V11H5M5 20V13H7V20M9 20V4H15V20M17 20V13H19V20Z"
+      />
+    </svg>
+  );
+}
+
+export { LightDark, OpenDoor, OpenWindow };

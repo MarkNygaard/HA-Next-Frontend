@@ -25,8 +25,8 @@ export default function ColorTemp({ entity_id }) {
   };
 
   return (
-    <div className="py-4">
-      <p className="pt-4 pb-2">Color Temperature</p>
+    <div className="py-2 sm:py-4">
+      <p className="pb-2 pt-2 sm:pt-4">Color Temperature</p>
       <div className="flex items-center">
         <div className="px-2">
           <Icon symbol="Temperature" />

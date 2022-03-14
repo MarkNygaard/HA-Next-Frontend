@@ -63,7 +63,7 @@ export default function Climate({ entity_id }) {
       {entity_id ? (
         <div className="flex flex-col justify-center">
           <div className="relative w-full flex-col justify-center">
-            <div className="flex justify-center">
+            <div className="flex justify-center pb-1 drop-shadow">
               <Roundy
                 arcSize={270}
                 rotationOffset={-45}
@@ -89,7 +89,7 @@ export default function Climate({ entity_id }) {
             <div className="absolute right-0 top-[32%] left-0 mx-auto w-[100px] text-center text-5xl font-medium text-white">
               {currentTemp}
             </div>
-            <div className="absolute right-0 bottom-[10%] left-0 mx-auto w-[100px] text-center font-extralight uppercase text-white">
+            <div className="absolute right-0 bottom-[11%] left-0 mx-auto w-[100px] text-center font-extralight uppercase text-white">
               {hvac}
             </div>
             <div className="absolute right-0 bottom-[20%] left-0 mx-auto w-[100px] text-center uppercase text-white">
@@ -99,7 +99,7 @@ export default function Climate({ entity_id }) {
           <div className="flex w-full justify-center">
             <div className="mt-4 flex divide-x divide-zinc-500 overflow-hidden rounded-lg bg-zinc-400">
               {entity?.state === 'off' ? (
-                <div className="py-1 pl-3 pr-2 text-sm font-semibold uppercase ">
+                <div className="py-1 pl-3 pr-2 text-sm font-semibold uppercase">
                   {entity?.attributes.hvac_modes[0]}
                 </div>
               ) : (

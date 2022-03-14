@@ -30,7 +30,7 @@ function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
   };
 
   return (
-    <div className="flex flex-col rounded-lg bg-tile-bg p-4 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600">
+    <div className="flex flex-col rounded-lg bg-tile-bg p-2 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-4">
       <button
         className="flex w-full flex-col justify-center"
         onClick={toggle}
@@ -52,7 +52,7 @@ function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
         </div>
       </button>
       <button className="flex w-full flex-col">
-        <div className="flex w-full justify-center pt-3 text-base font-normal text-white dark:text-black sm:text-xl">
+        <div className="flex w-full justify-center pt-1 text-sm font-normal leading-4 text-white dark:text-black sm:pt-2 sm:text-xl sm:leading-none">
           {entity_name}
         </div>
         <div className="flex w-full justify-center text-xs font-thin text-white"></div>
