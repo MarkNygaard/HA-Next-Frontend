@@ -21,7 +21,7 @@ export default function DetailsWindow({
   return (
     <div className="fixed inset-0 overflow-y-auto p-4 pl-[9vh] pt-[3vh] sm:pl-[3vh] sm:pt-[10vh]">
       <div
-        className="fixed inset-0 bg-gray-500/25 transition-opacity"
+        className="fixed inset-0 bg-gray-500/75 transition-opacity"
         onClick={onClose}
       ></div>
       <div className="relative mx-auto flex min-h-[50%] max-w-4xl justify-center rounded-xl bg-zinc-200 ring-1 ring-black/5 dark:bg-darkmode-bg">
@@ -42,7 +42,7 @@ export default function DetailsWindow({
                   })}
                 </p>
               ) : (
-                <p className="grid grid-cols-4 justify-center gap-3 text-center text-zinc-900 sm:grid-cols-2">
+                <p className="grid grid-cols-3 justify-center gap-3 text-center text-zinc-900 sm:grid-cols-2">
                   {allEntities.map((allEntities: any) => {
                     return (
                       <RoomDetails
