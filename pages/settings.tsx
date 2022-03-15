@@ -1,17 +1,15 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import { gql, GraphQLClient } from 'graphql-request';
 import { callService } from 'home-assistant-js-websocket';
 import { useAuth, useHass } from '@hooks';
 import { useEntity } from '@hooks';
 import Layout from '@components/layout';
 import Icon from '@components/icons';
-import SettingButton from '@components/buttons/settings';
+import EntityType from '@components/entity-types/check-type';
 
 export default function Settings({ allSettings }) {
-  const entity = useEntity(allSettings.entityId);
-
-  const { logout } = useAuth();
   const { connection } = useHass();
+  const { logout } = useAuth();
 
   return (
     <Layout>
@@ -19,14 +17,7 @@ export default function Settings({ allSettings }) {
         <div className="py-3">
           <div className="grid gap-5">
             {allSettings.map((Setting: any) => {
-              return (
-                <SettingButton
-                  key={Setting.entityId}
-                  entity_name={Setting.entityName}
-                  entity_id={Setting.entityId}
-                  entity_icon={Setting.icon.iconName}
-                />
-              );
+              return <EntityType key={Setting.id} setting={Setting} />;
             })}
           </div>
           <button onClick={() => logout(connection)}>Log Out</button>
@@ -39,10 +30,18 @@ export default function Settings({ allSettings }) {
 const query = gql`
   query {
     allSettings {
-      entityName
-      entityId
+      id
+      settingName
       icon {
         iconName
+      }
+      entity {
+        id
+        entityName
+        entityId
+        entityType {
+          entityTypeId
+        }
       }
     }
   }

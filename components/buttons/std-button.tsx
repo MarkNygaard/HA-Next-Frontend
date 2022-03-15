@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from 'react';
 import { callService } from 'home-assistant-js-websocket';
 import useHassStore from '../../stores/hass.store';
 import { useEntity } from '@hooks';
-import { useState, useEffect } from 'react';
 import { DetailsWindow } from '@components/modals';
 import Icon from '@components/icons';
 
