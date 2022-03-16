@@ -3,6 +3,7 @@ import { callService } from 'home-assistant-js-websocket';
 import useHassStore from '../../stores/hass.store';
 import { useEntity } from '@hooks';
 import Icon from '@components/icons';
+import { Tab } from '@headlessui/react';
 
 function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
   const { connection } = useHassStore();
@@ -32,7 +33,7 @@ function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
   return (
     <div className="flex flex-col rounded-lg bg-tile-bg p-2 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-4">
       <button
-        className="flex w-full flex-col justify-center"
+        className="flex w-full flex-col justify-center border-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
         onClick={toggle}
         type="button"
       >
@@ -51,12 +52,15 @@ function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {
           <Icon symbol={entity_icon} />
         </div>
       </button>
-      <button className="flex w-full flex-col">
+      <Tab
+        key={entity_id}
+        className="flex w-full flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+      >
         <div className="flex w-full justify-center pt-1 text-sm font-normal leading-4 text-white dark:text-black sm:pt-2 sm:text-xl sm:leading-none">
           {entity_name}
         </div>
         <div className="flex w-full justify-center text-xs font-thin text-white"></div>
-      </button>
+      </Tab>
     </div>
   );
 }

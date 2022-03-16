@@ -105,7 +105,7 @@ export default function Climate({ entity_id }) {
               ) : (
                 <button
                   onClick={turnOff}
-                  className="py-1 pl-3 pr-2 text-sm font-thin uppercase hover:bg-zinc-600"
+                  className="py-1 pl-3 pr-2 text-sm font-thin uppercase hover:bg-zinc-600 focus:outline-none focus:ring-inset focus:ring-offset-2 focus:ring-offset-transparent focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   {entity?.attributes.hvac_modes[0]}
                 </button>
@@ -117,7 +117,7 @@ export default function Climate({ entity_id }) {
               ) : (
                 <button
                   onClick={auto}
-                  className="py-1 px-2 text-sm font-thin uppercase hover:bg-zinc-600"
+                  className="py-1 px-2 text-sm font-thin uppercase hover:bg-zinc-600 focus:outline-none focus:ring-inset focus:ring-offset-2 focus:ring-offset-transparent focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   {entity?.attributes.hvac_modes[1]}
                 </button>
@@ -129,7 +129,7 @@ export default function Climate({ entity_id }) {
               ) : (
                 <button
                   onClick={heat}
-                  className="py-1 pr-3 pl-2 text-sm font-thin uppercase hover:bg-zinc-600"
+                  className="py-1 pr-3 pl-2 text-sm font-thin uppercase hover:bg-zinc-600 focus:outline-none focus:ring-inset focus:ring-offset-2 focus:ring-offset-transparent focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   {entity?.attributes.hvac_modes[2]}
                 </button>

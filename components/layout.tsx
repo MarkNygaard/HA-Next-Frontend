@@ -4,9 +4,9 @@ import Navigation from 'components/navigation';
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
-    <div className="flex max-h-screen w-full">
+    <div className="flex w-full">
       <Navigation />
-      <div className="dark:bg-darkmode-bg relative flex min-h-screen w-full items-start justify-center bg-gray-100 sm:items-center">
+      <div className="relative flex w-full items-start justify-center bg-gray-100 dark:bg-darkmode-bg sm:items-center">
         <div className="relative flex">
           <div className="relative max-w-lg">
             <div className="absolute left-0 -bottom-20 animate-blob rounded-full bg-purple-300 opacity-50 blur-xl filter dark:mix-blend-overlay md:h-64 md:w-64 xl:h-96 xl:w-96"></div>
@@ -14,7 +14,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
             <div className="animation-delay-4000 absolute -top-28 -left-40 animate-blob rounded-full bg-pink-300 opacity-50 blur-xl filter dark:mix-blend-overlay md:h-64 md:w-64 xl:h-96 xl:w-96"></div>
           </div>
         </div>
-        <div className="max-w-50 max-w-8xl absolute flex max-h-screen w-full flex-wrap justify-center overflow-auto">
+        <div className="max-w-50 max-w-8xl absolute flex w-full flex-wrap justify-center overflow-auto">
           {children}
         </div>
       </div>

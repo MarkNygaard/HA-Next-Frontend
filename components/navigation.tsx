@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth, useHass } from '@hooks';
 import Icon from '@components/icons';
 
 export default function Navigation() {
@@ -8,12 +7,9 @@ export default function Navigation() {
     setInterval(() => setDateState(new Date()), 30000);
   }, []);
 
-  const { logout } = useAuth();
-  const { connection } = useHass();
-
   return (
     <div className="flex h-screen flex-col border-r-2 border-zinc-200 bg-white dark:border-darkmode-border dark:bg-darkmode-nav sm:w-4/12 sm:border-r-4 xl:w-3/12">
-      <div className="h-screen w-full space-y-1 pb-3 pt-3 sm:px-3 sm:pt-12">
+      <div className="w-full space-y-1 pb-3 pt-3 sm:px-3 sm:pt-12">
         <div className="hidden justify-center rounded-sm text-center text-6xl font-thin text-zinc-600 dark:text-zinc-400 sm:flex sm:text-7xl lg:text-8xl">
           {dateState.toLocaleString('da-DK', {
             hour: 'numeric',
