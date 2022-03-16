@@ -13,14 +13,23 @@ export default function Settings({ allSettings }) {
 
   return (
     <Layout>
-      <div className="flex flex-col divide-y divide-solid divide-zinc-800">
-        <div className="py-3">
-          <div className="grid gap-5">
-            {allSettings.map((Setting: any) => {
-              return <EntityType key={Setting.id} setting={Setting} />;
-            })}
+      <div className="w-full flex-col">
+        <div className="flex h-screen w-1/4 flex-col p-4">
+          {allSettings.map((Setting: any) => {
+            return (
+              <div className="pt-2">
+                <div className="py-2">
+                  <EntityType key={Setting.id} setting={Setting} />
+                </div>
+                <div className=""></div>
+              </div>
+            );
+          })}
+          <div className="pt-4">
+            <div className="rounded-lg bg-zinc-500/50 p-2">
+              <button onClick={() => logout(connection)}>Log Out</button>
+            </div>
           </div>
-          <button onClick={() => logout(connection)}>Log Out</button>
         </div>
       </div>
     </Layout>

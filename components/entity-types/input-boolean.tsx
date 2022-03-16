@@ -32,9 +32,9 @@ export default function EntityInputBoolean({ allEntities }) {
   };
 
   return (
-    <div className="flex items-center">
-      <div className="p-4">{allEntities.entityName}</div>
-      <div className="p-4">
+    <div className="flex w-full">
+      <div className="flex-1">{allEntities.entityName}</div>
+      <div className="justify-end">
         <Switch
           checked={state}
           onChange={toggle}
