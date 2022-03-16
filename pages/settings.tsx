@@ -14,7 +14,7 @@ export default function Settings({ allSettings }) {
   return (
     <Layout>
       <div className="w-full flex-col">
-        <div className="flex h-screen w-1/4 flex-col p-4">
+        <div className="flex h-screen w-full flex-col p-4 md:w-2/4 xl:w-1/3">
           {allSettings.map((Setting: any) => {
             return (
               <div className="pt-2">
