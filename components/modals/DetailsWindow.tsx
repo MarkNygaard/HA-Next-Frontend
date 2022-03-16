@@ -43,7 +43,7 @@ export default function DetailsWindow({
                     <p className="grid grid-cols-2 justify-center gap-3 text-center text-zinc-900 sm:grid-cols-2">
                       <Tab
                         key={entity_id}
-                        className="col-span-3 flex flex-col justify-center rounded-lg bg-tile-bg p-2 hover:bg-tile-bg-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:col-span-2 sm:p-4"
+                        className="col-span-2 flex flex-col justify-center rounded-lg bg-tile-bg p-2 hover:bg-tile-bg-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-4"
                       >
                         <div className="flex w-full justify-center text-sm font-normal leading-4 text-white dark:text-black sm:text-xl sm:leading-none">
                           {entity_name}
