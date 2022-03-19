@@ -27,7 +27,7 @@ export default function Navigation() {
         </div>
         <a
           href="/"
-          className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4"
+          className="group flex items-center rounded-[75px] font-medium hover:shadow-md sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800 md:px-4"
         >
           <div className="hidden flex-1 sm:flex">
             <div className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg">
@@ -53,7 +53,7 @@ export default function Navigation() {
         </a>
         <a
           href="#"
-          className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4"
+          className="group flex items-center rounded-[75px] font-medium hover:shadow-md sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800 md:px-4"
         >
           <div className="hidden flex-1 sm:flex">
             <div className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg">
@@ -79,7 +79,7 @@ export default function Navigation() {
         </a>
         <a
           href="/clean"
-          className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4"
+          className="group flex items-center rounded-[75px] font-medium hover:shadow-md sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800 md:px-4"
         >
           <div className="hidden flex-1 sm:flex">
             <div className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg">
@@ -105,7 +105,7 @@ export default function Navigation() {
         </a>
         <a
           href="/entities"
-          className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4"
+          className="group flex items-center rounded-[75px] font-medium hover:shadow-md sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800 md:px-4"
         >
           <div className="hidden flex-1 sm:flex">
             <div className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg">
@@ -127,7 +127,7 @@ export default function Navigation() {
         </a>
         <a
           href="/settings"
-          className="group flex items-center rounded-[75px] font-medium sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-700 md:px-4"
+          className="group flex items-center rounded-[75px] font-medium hover:shadow-md sm:hover:bg-zinc-200 sm:dark:hover:bg-zinc-800 md:px-4"
         >
           <div className="hidden flex-1 sm:flex">
             <div className="group-hover:zinc-800 block p-3 text-sm font-light text-zinc-900 dark:text-zinc-400 dark:group-hover:text-zinc-200 sm:p-4 md:text-base xl:text-lg">
