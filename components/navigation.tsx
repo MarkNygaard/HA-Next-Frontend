@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Icon from '@components/icons';
+import Weather from './weather/weather';
 
 export default function Navigation() {
   const [dateState, setDateState] = useState(new Date());
@@ -9,7 +10,7 @@ export default function Navigation() {
 
   return (
     <div className="flex h-screen flex-col border-r-2 border-zinc-200 bg-white dark:border-darkmode-border dark:bg-darkmode-nav sm:w-4/12 sm:border-r-4 xl:w-3/12">
-      <div className="w-full space-y-1 pb-3 pt-3 sm:px-3 sm:pt-12">
+      <div className="w-full flex-1 space-y-1 pb-3 pt-3 sm:px-3 sm:pt-12">
         <div className="hidden justify-center rounded-sm text-center text-6xl font-thin text-zinc-600 dark:text-zinc-400 sm:flex sm:text-7xl lg:text-8xl">
           {dateState.toLocaleString('da-DK', {
             hour: 'numeric',
@@ -139,6 +140,7 @@ export default function Navigation() {
           </div>
         </a>
       </div>
+      <Weather />
     </div>
   );
 }
