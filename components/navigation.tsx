@@ -19,7 +19,7 @@ export default function Navigation() {
             hour12: false,
           })}
         </div>
-        <div className="hidden justify-center rounded-sm pb-6 text-center text-sm font-light capitalize text-zinc-800 dark:text-zinc-600 sm:flex lg:text-base">
+        <div className="hidden justify-center rounded-sm pb-6 text-center text-sm font-light capitalize text-zinc-800 dark:text-zinc-500 sm:flex lg:text-base">
           {dateState.toLocaleDateString('da-DK', {
             weekday: 'long',
             day: 'numeric',
