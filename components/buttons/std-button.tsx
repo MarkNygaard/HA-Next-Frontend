@@ -49,7 +49,7 @@ const StandardButton = ({
 
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full flex-col justify-center rounded-xl bg-tile-bg p-1 hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-3">
+      <div className="flex w-full flex-col rounded-lg bg-tile-bg p-2 backdrop-blur-lg hover:bg-tile-bg-hover dark:bg-zinc-500/50 dark:hover:bg-zinc-600 sm:p-4">
         <button
           className="flex w-full flex-col justify-center"
           onClick={toggle}

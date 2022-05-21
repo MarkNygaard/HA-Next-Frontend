@@ -22,7 +22,6 @@ export default function DetailsWindow({
     return classes.filter(Boolean).join(' ');
   }
 
-  // TODO set rightside div to change when focus changes on lights (tab on buttom half)
   return (
     <Dialog
       open={open}
@@ -105,6 +104,7 @@ export default function DetailsWindow({
                 </Tab.Panel>
                 {allEntities.map((allEntities: any) => (
                   <Tab.Panel
+                    key={allEntities.entityId}
                     className={classNames(
                       'flex w-full items-center px-3 pb-3 sm:py-4'
                     )}
