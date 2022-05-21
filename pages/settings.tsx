@@ -17,9 +17,9 @@ export default function Settings({ allSettings }) {
         <div className="flex h-screen w-full flex-col p-4 md:w-2/4 xl:w-1/3">
           {allSettings.map((Setting: any) => {
             return (
-              <div className="pt-2">
+              <div className="pt-2" key={Setting.id}>
                 <div className="py-2">
-                  <EntityType key={Setting.id} setting={Setting} />
+                  <EntityType setting={Setting} />
                 </div>
                 <div className=""></div>
               </div>

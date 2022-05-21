@@ -21,9 +21,9 @@ export default function Card(props) {
   }, []);
 
   return (
-    <div className="flex w-full divide-x divide-solid divide-black rounded-xl bg-white/50 p-1">
+    <div className="flex w-full divide-x divide-solid divide-zinc-900 rounded-xl border-[1px] border-white bg-white/50 p-1 dark:divide-white dark:border-darkmode-border dark:bg-darkmode-nav/75">
       {/** Today */}
-      <div className="grid w-full grid-cols-2 py-1 px-2">
+      <div className="grid w-full grid-cols-2 py-1 px-2 text-zinc-900 dark:text-white">
         {/** Row 1 */}
         <div className="flex items-center justify-center">
           {dateState.toLocaleDateString('en-US', {
@@ -49,13 +49,13 @@ export default function Card(props) {
         <div className="flex items-center justify-center">
           <div></div>
           <div className="flex items-center justify-center text-sm font-light">
-            {props.entity?.attributes.wind_speed} km/h
+            {Math.round(props.entity?.attributes.wind_speed * 0.44704)} m/s
           </div>
         </div>
       </div>
 
       {/** Tomorrow */}
-      <div className="py-1 px-2">
+      <div className="py-1 px-2 text-zinc-900 dark:text-white">
         <div>
           <div className="flex items-center justify-center">Tomorrow</div>
           <div>
