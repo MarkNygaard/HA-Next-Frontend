@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { callService } from 'home-assistant-js-websocket';
-import useHassStore from '../../stores/hass.store';
+import useHassStore from '../../../stores/hass.store';
 import { useEntity } from '@hooks';
-import Icon from '@components/icons';
+import Icon from '@components/primitives/icons';
 import { Tab } from '@headlessui/react';
 
 function RoomDetails({ entity_id, entity_name, entity_icon }): JSX.Element {

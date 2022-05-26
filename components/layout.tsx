@@ -14,7 +14,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
             <div className="animation-delay-4000 absolute -top-28 -left-40 animate-blob rounded-full bg-pink-300 opacity-50 blur-xl filter dark:mix-blend-overlay md:h-64 md:w-64 xl:h-96 xl:w-96"></div>
           </div>
         </div>
-        <div className="max-w-50 max-w-8xl absolute flex w-full flex-wrap justify-center overflow-auto">
+        <div className="max-w-8xl absolute flex h-full w-full flex-wrap items-center justify-center overflow-auto">
           {children}
         </div>
       </div>

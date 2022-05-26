@@ -1,4 +1,5 @@
 import StatusModal from './Status';
-import DetailsWindow from './DetailsWindow';
+import SlideUpModal from './SlideUpModal';
+import CenterModal from './CenterModal';
 
-export { StatusModal, DetailsWindow };
+export { StatusModal, SlideUpModal, CenterModal };

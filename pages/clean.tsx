@@ -3,7 +3,7 @@ import useHassStore from '../stores/hass.store';
 import { useEntities, useQuery } from '@hooks';
 import React, { useState, useEffect, useCallback } from 'react';
 import Layout from '@components/layout';
-import Icon from '@components/icons';
+import Icon from '@components/primitives/icons';
 
 const SomeComponent = () => {
   const entities = useEntities();

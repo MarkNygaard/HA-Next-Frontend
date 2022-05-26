@@ -1,8 +1,8 @@
 import React from 'react';
 import { StatusModal } from 'components/modals';
 import { gql, GraphQLClient } from 'graphql-request';
-import StandardButton from '@components/buttons/std-button';
-import AllLights from '@components/buttons/all-lights';
+import StandardButton from '@components/primitives/buttons/StandardButton';
+import AllLights from '@components/primitives/buttons/all-lights';
 import Layout from '@components/layout';
 
 export default function Home({ allRooms, allLight }) {

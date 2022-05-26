@@ -4,7 +4,7 @@ import { callService } from 'home-assistant-js-websocket';
 import { useAuth, useHass } from '@hooks';
 import { useEntity } from '@hooks';
 import Layout from '@components/layout';
-import Icon from '@components/icons';
+import Icon from '@components/primitives/icons';
 import EntityType from '@components/entity-types/check-type';
 
 export default function Settings({ allSettings }) {

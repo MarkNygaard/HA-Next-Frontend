@@ -1,8 +1,8 @@
 import { callService } from 'home-assistant-js-websocket';
-import useHassStore from '../../stores/hass.store';
+import useHassStore from '../../../stores/hass.store';
 import { useEntity } from '@hooks';
 import { useState, useEffect } from 'react';
-import Icon from '@components/icons';
+import Icon from '@components/primitives/icons';
 
 const AllLights = ({ entity_name, entity_id }) => {
   const { connection } = useHassStore();

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { callService } from 'home-assistant-js-websocket';
-import useHassStore from '../../stores/hass.store';
+import useHassStore from '../../../stores/hass.store';
 import { useEntity } from '@hooks';
-import { DetailsWindow } from '@components/modals';
-import Icon from '@components/icons';
+import Icon from '@components/primitives/icons';
+import { AnimatePresence } from 'framer-motion';
+import DetailsWindow from '@components/views/DetailsWindow';
 
 const StandardButton = ({
   entity_name,
@@ -118,14 +119,18 @@ const StandardButton = ({
             {humid?.state ? <div className="px-2">{humid?.state}%</div> : <></>}
           </div>
         </button>
-        <DetailsWindow
-          allEntities={roomDetails}
-          entity_name={entity_name}
-          entity_id={entity_id}
-          climate_id={climate_id}
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-        />
+        <AnimatePresence>
+          {isOpen && (
+            <DetailsWindow
+              key={entity_name}
+              allEntities={roomDetails}
+              entity_name={entity_name}
+              entity_id={entity_id}
+              climate_id={climate_id}
+              onClose={() => setIsOpen(false)}
+            />
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

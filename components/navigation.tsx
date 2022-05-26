@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Icon from '@components/icons';
+import Icon from '@components/primitives/icons';
 import Weather from './weather/weather';
 
 export default function Navigation() {
