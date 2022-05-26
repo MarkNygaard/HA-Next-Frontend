@@ -5,7 +5,7 @@ import EntityInputDatetime from './input-datetime';
 
 export default function EntityType({ setting }) {
   return (
-    <div className="divide-y divide-solid divide-black rounded-lg bg-zinc-500/50 px-4">
+    <div className="divide-y divide-solid divide-black rounded-lg bg-zinc-300/50 px-4">
       <div className="pb-1 pt-2 text-xl font-medium text-black">
         {setting.settingName}
       </div>

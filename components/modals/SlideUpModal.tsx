@@ -7,7 +7,7 @@ export default function SlideUpModal({ onClose, children }) {
 
   return (
     <Dialog open={true} onClose={onClose} className="fixed inset-0">
-      <div className="flex h-full flex-col justify-center px-1 pt-4 text-center">
+      <div className="flex h-full flex-col justify-center px-1 pt-4 text-center standalone:pt-12">
         <Dialog.Overlay
           as={motion.div}
           initial={{ opacity: 0 }}
@@ -54,7 +54,7 @@ export default function SlideUpModal({ onClose, children }) {
               <title>Close Menu</title>
             </svg>
           </div>
-          {children}
+          <div className="overflow-y-auto">{children}</div>
         </motion.div>
       </div>
     </Dialog>

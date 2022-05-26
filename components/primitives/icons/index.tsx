@@ -20,8 +20,9 @@ import {
   GiRoundShield,
   GiHeatHaze,
   GiWindow,
+  GiVacuumCleaner,
 } from 'react-icons/gi';
-import { AiOutlineHome } from 'react-icons/ai';
+import { AiOutlineHome, AiOutlineBulb } from 'react-icons/ai';
 import { HiOutlineLightBulb } from 'react-icons/hi';
 import {
   CeilingAurelle,
@@ -29,6 +30,8 @@ import {
   Lightstrip,
   PendantBeing,
 } from './hue-icons';
+import { BiHome } from 'react-icons/bi';
+import { SiHomebridge } from 'react-icons/si';
 import { LightDark, OpenDoor, OpenWindow } from './misc';
 
 // Search icons at https://react-icons.github.io/react-icons/ & https://github.com/arallsopp/hass-hue-icons
@@ -87,6 +90,14 @@ function Icon(props) {
       return <BsGearWideConnected />;
     case 'LightDark':
       return <LightDark />;
+    case 'Home':
+      return <BiHome />;
+    case 'AiOutlineBulb':
+      return <AiOutlineBulb />;
+    case 'GiVacuumCleaner':
+      return <GiVacuumCleaner />;
+    case 'SiHomebridge':
+      return <SiHomebridge />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }

@@ -26,7 +26,7 @@ export default function Settings({ allSettings }) {
             );
           })}
           <div className="pt-4">
-            <div className="rounded-lg bg-zinc-500/50 p-2">
+            <div className="rounded-lg bg-zinc-300/50 p-2">
               <button onClick={() => logout(connection)}>Log Out</button>
             </div>
           </div>

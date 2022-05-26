@@ -38,7 +38,7 @@ export default function CenterModal({ onClose, children }) {
         }}
         className="relative mx-auto flex min-h-[50%] max-w-4xl justify-center rounded-xl bg-zinc-200 ring-1 ring-black/5 dark:bg-darkmode-bg"
       >
-        {children}
+        <div className="overflow-y-auto">{children}</div>
       </motion.div>
     </Dialog>
   );

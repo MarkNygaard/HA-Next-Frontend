@@ -35,6 +35,9 @@ module.exports = {
         weatherCloudsDark:
           "linear-gradient(to bottom, rgba(29,32,34,1.0),rgba(29,32,34,0.8),rgba(29,32,34,0.4)), url('https://cdn.pixabay.com/photo/2022/03/06/05/30/clouds-7050884_960_720.jpg')",
       },
+      screens: {
+        standalone: { raw: '(display-mode: standalone)' },
+      },
     },
   },
   plugins: [],

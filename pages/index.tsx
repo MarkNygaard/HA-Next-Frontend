@@ -2,14 +2,14 @@ import React from 'react';
 import { StatusModal } from 'components/modals';
 import { gql, GraphQLClient } from 'graphql-request';
 import StandardButton from '@components/primitives/buttons/StandardButton';
-import AllLights from '@components/primitives/buttons/all-lights';
+import AllLights from '@components/primitives/buttons/AllLights';
 import Layout from '@components/layout';
 
 export default function Home({ allRooms, allLight }) {
   return (
     <div className="flex w-screen">
       <Layout>
-        <div className="flex w-full max-w-xs flex-col justify-center sm:max-w-sm md:max-w-xl xl:max-w-3xl">
+        <div className="flex w-full max-w-sm flex-col justify-center sm:max-w-sm md:max-w-xl xl:max-w-3xl standalone:max-w-none">
           <div className="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 xl:grid-cols-4 xl:gap-6">
             {allRooms.map((Room: any) => {
               return (
