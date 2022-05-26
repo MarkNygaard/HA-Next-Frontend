@@ -4,7 +4,10 @@ import Navigation from 'components/navigation';
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
-    <div className="flex min-h-screen w-full flex-col sm:flex-row">
+    <div
+      style={{ WebkitTapHighlightColor: 'transparent' }}
+      className="flex min-h-screen w-full flex-col sm:flex-row"
+    >
       <Navigation />
       <div className="relative flex h-full w-full items-start justify-center bg-gray-100 dark:bg-darkmode-bg sm:items-center">
         <div className="relative flex">

@@ -9,7 +9,10 @@ const App = ({ Component, pageProps }) => (
         name="apple-mobile-web-app-status-bar-style"
         content="black-translucent"
       />
-      <meta name="viewport" content="initial-scale=1.0, viewport-fit=cover" />
+      <meta
+        name="viewport"
+        content="initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+      />
       <link
         rel="icon"
         type="image/png"

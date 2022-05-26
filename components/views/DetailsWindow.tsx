@@ -1,9 +1,9 @@
 import React from 'react';
 import RoomDetails from '@components/primitives/buttons/RoomDetails';
 import { Tab } from '@headlessui/react';
-import Brightness from '@components/properties/brightness';
-import ColorTemp from '@components/properties/color-temp';
-import Climate from '@components/properties/climate';
+import Brightness from '@components/properties/Brightness';
+import ColorTemp from '@components/properties/ColorTemp';
+import Climate from '@components/properties/Climate';
 import { SlideUpModal, CenterModal } from '@components/modals';
 
 export default function DetailsWindow({
