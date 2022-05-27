@@ -1,71 +1,82 @@
-import React from 'react';
-import { gql, GraphQLClient } from 'graphql-request';
-import { callService } from 'home-assistant-js-websocket';
-import { useAuth, useHass } from '@hooks';
-import { useEntity } from '@hooks';
-import Layout from '@components/layout';
-import Icon from '@components/primitives/icons';
 import EntityType from '@components/entity-types/check-type';
+import Layout from '@components/layout';
+import RoomSettings from '@components/views/RoomSettings';
+import { useAuth, useHass } from '@hooks';
+import { PrismaClient } from '@prisma/client';
+import { AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
 
-export default function Settings({ allSettings }) {
+export default function Settings({ allSettings, allRooms }) {
   const { connection } = useHass();
   const { logout } = useAuth();
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Layout>
-      <div className="w-full flex-col">
-        <div className="flex h-screen w-full flex-col p-4 md:w-2/4 xl:w-1/3">
-          {allSettings.map((Setting: any) => {
-            return (
-              <div className="pt-2" key={Setting.id}>
-                <div className="py-2">
-                  <EntityType setting={Setting} />
+    <div className="flex w-screen">
+      <Layout>
+        <div className="w-full flex-col">
+          <div className="flex h-screen w-full flex-col p-4 md:w-2/4 xl:w-1/3">
+            {allSettings.map((Setting: any) => {
+              return (
+                <div className="pt-2" key={Setting.id}>
+                  <div className="py-2">
+                    <EntityType setting={Setting} />
+                  </div>
                 </div>
-                <div className=""></div>
+              );
+            })}
+            <div className="pt-4 pb-2">
+              <div className="rounded-lg bg-zinc-300/50 p-2 px-4">
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="w-full text-left text-xl font-medium"
+                >
+                  Rooms
+                </button>
+                <AnimatePresence>
+                  {isOpen && (
+                    <RoomSettings
+                      allRooms={allRooms}
+                      onClose={() => setIsOpen(false)}
+                    />
+                  )}
+                </AnimatePresence>
               </div>
-            );
-          })}
-          <div className="pt-4">
-            <div className="rounded-lg bg-zinc-300/50 p-2">
-              <button onClick={() => logout(connection)}>Log Out</button>
+            </div>
+            <div className="pt-4">
+              <div className="rounded-lg bg-zinc-300/50 p-2 px-4">
+                <button onClick={() => logout(connection)}>Log Out</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   );
 }
 
-const query = gql`
-  query {
-    allSettings {
-      id
-      settingName
-      icon {
-        iconName
-      }
-      entity {
-        id
-        entityName
-        entityId
-        entityType {
-          entityTypeId
-        }
-      }
-    }
-  }
-`;
+const prisma = new PrismaClient();
 
-export async function getStaticProps() {
-  const endpoint = 'https://graphql.datocms.com/';
-  const graphQLClient = new GraphQLClient(endpoint, {
-    headers: {
-      'content-type': 'application/json',
-      authorization: 'Bearer ' + process.env.DATOCMS_API_KEY,
+export async function getServerSideProps() {
+  const settings = await prisma.settings.findMany({
+    include: {
+      entity: {
+        include: {
+          entityType: true,
+        },
+      },
     },
   });
-  const allSettings = await graphQLClient.request(query);
+  const rooms = await prisma.room.findMany({
+    include: {
+      subLights: true,
+    },
+  });
   return {
-    props: allSettings,
+    props: {
+      allSettings: settings,
+      allRooms: rooms,
+    },
   };
 }

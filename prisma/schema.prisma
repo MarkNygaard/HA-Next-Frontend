@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Room {
+  id String @id @default(cuid())
+  entityName String
+  entityId String
+  sorting Int
+  icon String
+  tempId  String
+  humidId String
+  climateId String
+  windowId String
+  doorId String
+  subLights SubLight[]
+}
+
+model SubLight {
+  id String @id @default(cuid())
+  entityName String
+  entityId String
+  icon String
+  Room Room? @relation(fields: [roomId], references: [id])
+  roomId String?
+}
+
+model Settings {
+  id String @id @default(cuid())
+  settingName String
+  icon String
+  entity Entity[]
+}
+
+model Entity {
+  id String @id @default(cuid())
+  entityName String
+  entityId String
+  entityType EntityType[]
+  Settings Settings? @relation(fields: [settingId], references: [id])
+  settingId String?
+}
+
+model EntityType {
+  id String @id @default(cuid())
+  entityTypeId String
+  entity Entity[]
+}
+
+model AllLights {
+  id String @id @default(cuid())
+  entityName String
+  entityId String
+}

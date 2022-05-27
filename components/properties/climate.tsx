@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { callService } from 'home-assistant-js-websocket';
 import useHassStore from '../../stores/hass.store';
 import { useEntity } from '@hooks';
-import Icon from '@components/primitives/icons';
 import Roundy from 'roundy';
 
 export default function Climate({ entity_id }) {

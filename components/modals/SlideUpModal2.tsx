@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import Add from '../primitives/buttons/Add';
 
-export default function SlideUpModal({ onClose, children, add, heading }) {
-  if (!open) return null;
+export default function SlideUpModal2({ onClose, children, add, heading }) {
+  // if (!open) return null;
 
   return (
     <Dialog open={true} onClose={onClose} className="fixed inset-0">
@@ -37,26 +37,26 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
                 height: '100vh',
               });
               set(document.body, { position: 'fixed', inset: '0' });
-              set(document.querySelector('#__next'), {
+              set(document.getElementById('SlideUpModal1'), {
                 borderRadius: '8px',
                 overflow: 'hidden',
                 transform:
-                  'scale(0.93) translateY(calc(env(safe-area-inset-top) + -24px)',
+                  'scale(0.97) translateY(calc(env(safe-area-inset-top) + -13px)',
                 tranformOrigin: 'top',
                 transitionProperty: 'transform',
                 transitionDuration: '0.3s',
                 transitionTimingFunction: 'cubic-bezier(0.36, 0.66, 0.04, 1)',
               });
             } else {
-              reset(document.querySelector('#__next'), 'transform');
+              reset(document.getElementById('SlideUpModal1'), 'transform');
               reset(document.body);
             }
           }}
           onAnimationComplete={(variant) => {
             if (variant === 'closed') {
               reset(document.documentElement);
+              reset(document.getElementById('SlideUpModal1'));
               reset(document.body);
-              reset(document.querySelector('#__next'));
             }
           }}
           className="fixed inset-0 bg-black/40"
@@ -74,8 +74,7 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
             opacity: 0,
             transition: { duration: 0.3, ease: [0.36, 0.66, 0.04, 1] },
           }}
-          id="SlideUpModal1"
-          className="z-0 mt-4 flex h-full w-full flex-col rounded-t-lg bg-zinc-100 shadow-xl"
+          className="z-0 mt-6 flex h-full w-full flex-col rounded-t-lg bg-zinc-100 shadow-xl"
         >
           <div className="flex">
             {add ? <Add /> : <div className="px-[26px]"></div>}
@@ -111,7 +110,7 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
   );
 }
 
-let cache = new Map();
+let cache2 = new Map();
 
 function set(el, styles) {
   let originalStyles = {};
@@ -121,11 +120,11 @@ function set(el, styles) {
     el.style[key] = value;
   });
 
-  cache.set(el, originalStyles);
+  cache2.set(el, originalStyles);
 }
 
 function reset(el, prop?) {
-  let originalStyles = cache.get(el);
+  let originalStyles = cache2.get(el);
 
   if (prop) {
     el.style[prop] = originalStyles[prop];

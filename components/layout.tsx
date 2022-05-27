@@ -1,6 +1,5 @@
-import React from 'react';
-
 import Navigation from 'components/navigation';
+import React from 'react';
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (

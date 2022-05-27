@@ -1,39 +1,43 @@
 import React from 'react';
 import { StatusModal } from 'components/modals';
-import { gql, GraphQLClient } from 'graphql-request';
 import StandardButton from '@components/primitives/buttons/StandardButton';
 import AllLights from '@components/primitives/buttons/AllLights';
 import Layout from '@components/layout';
+import { Prisma, PrismaClient } from '@prisma/client';
 
-export default function Home({ allRooms, allLight }) {
+export default function Home({ allRooms, allLights }) {
   return (
     <div className="flex w-screen">
       <Layout>
         <div className="flex w-full max-w-sm flex-col justify-center sm:max-w-sm md:max-w-xl xl:max-w-3xl standalone:max-w-none">
           <div className="grid grid-cols-2 gap-4 p-4 md:grid-cols-3 xl:grid-cols-4 xl:gap-6">
-            {allRooms.map((Room: any) => {
+            {allRooms.map((r: any) => {
               return (
                 <StandardButton
-                  key={Room.entityId}
-                  entity_name={Room.entityName}
-                  entity_id={Room.entityId}
-                  entity_icon={Room.icon.iconName}
-                  temp_id={Room.tempId}
-                  humid_id={Room.humidId}
-                  climate_id={Room.climateId}
-                  window_id={Room.windowId}
-                  door_id={Room.doorId}
-                  roomDetails={Room.subLight}
+                  key={r?.entityId}
+                  entity_name={r.entityName}
+                  entity_id={r.entityId}
+                  entity_icon={r.icon}
+                  temp_id={r.tempId}
+                  humid_id={r.humidId}
+                  climate_id={r.climateId}
+                  window_id={r.windowId}
+                  door_id={r.doorId}
+                  roomDetails={r.subLights}
                 />
               );
             })}
           </div>
-          <div>
-            <AllLights
-              entity_name={allLight.entityName}
-              entity_id={allLight.entityId}
-            />
-          </div>
+          {allLights.map((Lights: any) => {
+            return (
+              <div>
+                <AllLights
+                  entity_name={Lights.entityName}
+                  entity_id={Lights.entityId}
+                />
+              </div>
+            );
+          })}
         </div>
       </Layout>
       <StatusModal />
@@ -41,44 +45,19 @@ export default function Home({ allRooms, allLight }) {
   );
 }
 
-const query = gql`
-  query {
-    allRooms(orderBy: sorting_ASC) {
-      entityName
-      entityId
-      tempId
-      humidId
-      climateId
-      windowId
-      doorId
-      icon {
-        iconName
-      }
-      subLight {
-        entityName
-        entityId
-        icon {
-          iconName
-        }
-      }
-    }
-    allLight {
-      entityName
-      entityId
-    }
-  }
-`;
+const prisma = new PrismaClient();
 
-export async function getStaticProps() {
-  const endpoint = 'https://graphql.datocms.com/';
-  const graphQLClient = new GraphQLClient(endpoint, {
-    headers: {
-      'content-type': 'application/json',
-      authorization: 'Bearer ' + process.env.DATOCMS_API_KEY,
+export async function getServerSideProps() {
+  const rooms = await prisma.room.findMany({
+    include: {
+      subLights: true,
     },
   });
-  const allRooms = await graphQLClient.request(query);
+  const allLights = await prisma.allLights.findMany();
   return {
-    props: allRooms,
+    props: {
+      allRooms: rooms,
+      allLights: allLights,
+    },
   };
 }

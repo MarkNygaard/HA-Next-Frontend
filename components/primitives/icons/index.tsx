@@ -32,6 +32,7 @@ import {
 } from './hue-icons';
 import { BiHome } from 'react-icons/bi';
 import { SiHomebridge } from 'react-icons/si';
+import { IoMdAdd } from 'react-icons/io';
 import { LightDark, OpenDoor, OpenWindow } from './misc';
 
 // Search icons at https://react-icons.github.io/react-icons/ & https://github.com/arallsopp/hass-hue-icons
@@ -98,6 +99,8 @@ function Icon(props) {
       return <GiVacuumCleaner />;
     case 'SiHomebridge':
       return <SiHomebridge />;
+    case 'Plus':
+      return <IoMdAdd />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }

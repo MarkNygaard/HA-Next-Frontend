@@ -20,7 +20,7 @@ export default function DetailsWindow({
   }
 
   return (
-    <SlideUpModal onClose={onClose}>
+    <SlideUpModal heading={false} add={false} onClose={onClose}>
       <Tab.Group>
         {allEntities.length ? (
           <div className="flex w-full flex-col sm:flex-row">
@@ -42,7 +42,7 @@ export default function DetailsWindow({
                           key={allEntities.entityId}
                           entity_name={allEntities.entityName}
                           entity_id={allEntities.entityId}
-                          entity_icon={allEntities.icon.iconName}
+                          entity_icon={allEntities.icon}
                         />
                       );
                     })}
@@ -65,7 +65,7 @@ export default function DetailsWindow({
                           key={allEntities.entityId}
                           entity_name={allEntities.entityName}
                           entity_id={allEntities.entityId}
-                          entity_icon={allEntities.icon.iconName}
+                          entity_icon={allEntities.icon}
                         />
                       );
                     })}

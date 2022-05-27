@@ -13,13 +13,25 @@ export default function EntityType({ setting }) {
         {setting.entity.map((entities) => {
           return (
             <div className="w-full py-2 font-light text-black">
-              {entities.entityType.entityTypeId === 'Switch' ? (
-                <EntitySwitch key={entities.id} allEntities={entities} />
-              ) : entities.entityType.entityTypeId === 'Input boolean' ? (
-                <EntityInputBoolean key={entities.id} allEntities={entities} />
-              ) : entities.entityType.entityTypeId === 'Input datetime' ? (
-                <EntityInputDatetime key={entities.id} allEntities={entities} />
-              ) : null}
+              {entities.entityType.map((eType) => {
+                return (
+                  <>
+                    {eType.entityTypeId === 'Switch' ? (
+                      <EntitySwitch key={entities.id} allEntities={entities} />
+                    ) : eType.entityTypeId === 'Input boolean' ? (
+                      <EntityInputBoolean
+                        key={entities.id}
+                        allEntities={entities}
+                      />
+                    ) : eType.entityTypeId === 'Input datetime' ? (
+                      <EntityInputDatetime
+                        key={entities.id}
+                        allEntities={entities}
+                      />
+                    ) : null}
+                  </>
+                );
+              })}
             </div>
           );
         })}
