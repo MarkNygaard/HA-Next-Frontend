@@ -9,7 +9,7 @@ export default function Add({ room }: any) {
   const [rooms, setRooms] = useState(room);
 
   return (
-    <div className="flex items-center p-3 text-2xl text-blue-500 hover:cursor-pointer group-hover:text-tile-bg dark:text-zinc-400 sm:text-2xl sm:group-hover:text-white xl:text-3xl">
+    <div className="flex items-center p-3 text-2xl text-blue-500 hover:cursor-pointer group-hover:text-tile-bg sm:text-2xl sm:group-hover:text-white xl:text-3xl">
       <div onClick={() => setIsOpen(true)}>
         <Icon symbol="Plus" />
       </div>

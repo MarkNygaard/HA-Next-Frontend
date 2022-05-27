@@ -49,7 +49,7 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
               });
             } else {
               reset(document.querySelector('#__next'), 'transform');
-              reset(document.body);
+              // reset(document.body);
             }
           }}
           onAnimationComplete={(variant) => {
