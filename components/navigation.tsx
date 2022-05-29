@@ -64,7 +64,10 @@ export default function Navigation() {
   }, []);
 
   return (
-    <div className="flex w-full justify-center border-b-2 border-zinc-200 bg-white dark:border-darkmode-border dark:bg-darkmode-nav sm:h-screen sm:w-4/12 sm:flex-col sm:border-r-4 xl:w-3/12 standalone:fixed standalone:z-10 standalone:pt-10">
+    <div
+      id="header"
+      className="flex w-full justify-center border-b-2 border-zinc-200 bg-white dark:border-darkmode-border dark:bg-darkmode-nav sm:h-screen sm:w-4/12 sm:flex-col sm:border-r-4 xl:w-3/12 standalone:fixed standalone:z-10 standalone:pt-10"
+    >
       <div className="flex space-y-1 sm:block sm:w-full sm:flex-1 sm:px-3 sm:pb-3 sm:pt-12">
         <div className="hidden justify-center rounded-sm text-center text-6xl font-thin text-zinc-600 dark:text-zinc-400 sm:flex sm:text-7xl lg:text-8xl">
           {dateState.toLocaleString('da-DK', {

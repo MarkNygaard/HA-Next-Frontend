@@ -1,8 +1,10 @@
 import { SlideUpModal } from '@components/modals';
-import React from 'react';
 import { Disclosure } from '@headlessui/react';
+import React, { useState } from 'react';
 
-export default function RoomSettings({ onClose, allRooms }) {
+export default function RoomSettings({ onClose, allRooms, room }) {
+  const [rooms, setRooms] = useState(room);
+
   return (
     <SlideUpModal heading={'Room Settings'} add={true} onClose={onClose}>
       <div className="flex flex-col overflow-y-auto">
@@ -18,7 +20,7 @@ export default function RoomSettings({ onClose, allRooms }) {
                     </div>
                   </Disclosure.Button>
                   <Disclosure.Panel>
-                    <div className="rounded-sm bg-zinc-200">
+                    <div className="relative rounded-sm bg-zinc-200">
                       <div className="mb-2 grid max-w-md grid-cols-3 p-1 text-sm">
                         <div className="col-span-1 flex flex-col justify-start">
                           <span className="flex">Entity Name:</span>
@@ -39,6 +41,7 @@ export default function RoomSettings({ onClose, allRooms }) {
                           {room.doorId && (
                             <span className="flex">Door Open:</span>
                           )}
+                          <span className="flex">UID:</span>
                         </div>
                         <div className="col-span-2 flex flex-col justify-start">
                           <span className="flex">{room.entityName}</span>
@@ -49,8 +52,23 @@ export default function RoomSettings({ onClose, allRooms }) {
                           <span className="flex">{room.climateId}</span>
                           <span className="flex">{room.windowId}</span>
                           <span className="flex">{room.doorId}</span>
+                          <span className="flex">{room.id}</span>
                         </div>
                       </div>
+                      <button
+                        // Delete Room on click
+                        onClick={async () => {
+                          try {
+                            await deleteRoom(room.id);
+                            setRooms([...rooms, room.id]);
+                          } catch (err) {
+                            console.log(err);
+                          }
+                        }}
+                        className="absolute top-0 right-0 m-1 rounded-md bg-gray-100 px-2"
+                      >
+                        Delete
+                      </button>
                     </div>
                   </Disclosure.Panel>
                 </div>
@@ -62,4 +80,17 @@ export default function RoomSettings({ onClose, allRooms }) {
       </div>
     </SlideUpModal>
   );
+}
+
+async function deleteRoom(room) {
+  const response = await fetch('/api/rooms', {
+    method: 'DELETE',
+    body: JSON.stringify(room),
+  });
+
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+
+  return await response.json();
 }

@@ -37,6 +37,7 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
                 height: '100vh',
               });
               set(document.body, { position: 'fixed', inset: '0' });
+              set(document.querySelector('#header'), { position: 'absolute' });
               set(document.querySelector('#__next'), {
                 borderRadius: '8px',
                 overflow: 'hidden',
@@ -56,6 +57,7 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
             if (variant === 'closed') {
               reset(document.documentElement);
               reset(document.body);
+              reset(document.querySelector('#header'));
               reset(document.querySelector('#__next'));
             }
           }}
