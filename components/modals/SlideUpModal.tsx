@@ -37,27 +37,28 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
                 height: '100vh',
               });
               set(document.body, { position: 'fixed', inset: '0' });
-              set(document.querySelector('#header'), { position: 'absolute' });
+              // set(document.querySelector('#header'), {
+              //   position: 'absolute',
+              // });
               set(document.querySelector('#__next'), {
                 borderRadius: '8px',
                 overflow: 'hidden',
                 transform:
-                  'scale(0.93) translateY(calc(env(safe-area-inset-top) + -24px)',
-                tranformOrigin: 'top',
+                  'scale(0.93) translateY(calc(env(safe-area-inset-top) + 8px)',
+                transformOrigin: 'top',
                 transitionProperty: 'transform',
                 transitionDuration: '0.3s',
                 transitionTimingFunction: 'cubic-bezier(0.36, 0.66, 0.04, 1)',
               });
             } else {
               reset(document.querySelector('#__next'), 'transform');
-              // reset(document.body);
             }
           }}
           onAnimationComplete={(variant) => {
             if (variant === 'closed') {
               reset(document.documentElement);
               reset(document.body);
-              reset(document.querySelector('#header'));
+              // reset(document.querySelector('#header'));
               reset(document.querySelector('#__next'));
             }
           }}
@@ -77,11 +78,11 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
             transition: { duration: 0.3, ease: [0.36, 0.66, 0.04, 1] },
           }}
           id="SlideUpModal1"
-          className="z-0 mt-4 flex h-full w-full flex-col rounded-t-lg bg-zinc-100 shadow-xl"
+          className="z-0 mt-4 flex h-full w-full flex-col rounded-t-lg bg-white shadow-xl dark:bg-zinc-900"
         >
           <div className="flex">
             {add ? <Add /> : <div className="px-[26px]"></div>}
-            <div className="flex w-full items-center justify-center text-xl font-medium">
+            <div className="flex w-full items-center justify-center text-xl font-medium dark:text-white">
               {heading ? heading : null}
             </div>
             <div
@@ -89,7 +90,7 @@ export default function SlideUpModal({ onClose, children, add, heading }) {
               onClick={onClose}
             >
               <svg
-                className="block h-7 w-7"
+                className="block h-7 w-7 dark:text-white"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

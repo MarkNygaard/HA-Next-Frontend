@@ -15,12 +15,12 @@ export default function RoomSettings({ onClose, allRooms, room }) {
               <Disclosure key={room.entityId}>
                 <div className="flex flex-col justify-start">
                   <Disclosure.Button>
-                    <div className="flex py-2 text-lg font-medium">
+                    <div className="flex py-2 text-lg font-medium dark:text-white">
                       {room.entityName}
                     </div>
                   </Disclosure.Button>
                   <Disclosure.Panel>
-                    <div className="relative rounded-sm bg-zinc-200">
+                    <div className="relative mb-2 rounded-md border-[1px] border-zinc-300 bg-zinc-200 dark:border-zinc-700">
                       <div className="mb-2 grid max-w-md grid-cols-3 p-1 text-sm">
                         <div className="col-span-1 flex flex-col justify-start">
                           <span className="flex">Entity Name:</span>
@@ -47,11 +47,21 @@ export default function RoomSettings({ onClose, allRooms, room }) {
                           <span className="flex">{room.entityName}</span>
                           <span className="flex">{room.entityId}</span>
                           <span className="flex">{room.icon}</span>
-                          <span className="flex">{room.tempId}</span>
-                          <span className="flex">{room.humidId}</span>
-                          <span className="flex">{room.climateId}</span>
-                          <span className="flex">{room.windowId}</span>
-                          <span className="flex">{room.doorId}</span>
+                          {room.tempId && (
+                            <span className="flex">{room.tempId}</span>
+                          )}
+                          {room.humidId && (
+                            <span className="flex">{room.humidId}</span>
+                          )}
+                          {room.climateId && (
+                            <span className="flex">{room.climateId}</span>
+                          )}
+                          {room.windowId && (
+                            <span className="flex">{room.windowId}</span>
+                          )}
+                          {room.doorId && (
+                            <span className="flex">{room.doorId}</span>
+                          )}
                           <span className="flex">{room.id}</span>
                         </div>
                       </div>
@@ -65,7 +75,7 @@ export default function RoomSettings({ onClose, allRooms, room }) {
                             console.log(err);
                           }
                         }}
-                        className="absolute top-0 right-0 m-1 rounded-md bg-gray-100 px-2"
+                        className="absolute top-0 right-0 m-1 rounded-md border-[1px] border-zinc-300 bg-zinc-50 px-2 hover:border-zinc-400 hover:shadow-md"
                       >
                         Delete
                       </button>
