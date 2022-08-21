@@ -1,10 +1,8 @@
 import { SlideUpModal } from '@components/modals';
 import { Disclosure } from '@headlessui/react';
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function RoomSettings({ onClose, allRooms, room }) {
-  const [rooms, setRooms] = useState(room);
-
+export default function RoomSettings({ onClose, allRooms }) {
   return (
     <SlideUpModal heading={'Room Settings'} add={true} onClose={onClose}>
       <div className="flex flex-col overflow-y-auto">
@@ -70,7 +68,6 @@ export default function RoomSettings({ onClose, allRooms, room }) {
                         onClick={async () => {
                           try {
                             await deleteRoom(room.id);
-                            setRooms([...rooms, room.id]);
                           } catch (err) {
                             console.log(err);
                           }

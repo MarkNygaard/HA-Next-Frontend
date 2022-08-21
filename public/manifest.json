@@ -1,6 +1,10 @@
 {
   "display": "standalone",
+  "name": "Home",
   "short_name": "Home",
+  "description": "HomeAssistant Frontend",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "manifest-icon-192.maskable.png",

@@ -1,12 +1,9 @@
-import React from 'react';
-import RoomDetails from '@components/buttons/room-details';
-import useHassStore from '../../stores/hass.store';
-import { useEntity } from '@hooks';
-import Icon from '@components/icons';
+import RoomDetails from '@components/primitives/buttons/RoomDetails';
+import Brightness from '@components/properties/Brightness';
+import Climate from '@components/properties/Climate';
+import ColorTemp from '@components/properties/ColorTemp';
 import { Dialog, Tab } from '@headlessui/react';
-import Brightness from '@components/properties/brightness';
-import ColorTemp from '@components/properties/color-temp';
-import Climate from '@components/properties/climate';
+import React from 'react';
 
 export default function DetailsWindow({
   open,

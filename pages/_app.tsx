@@ -1,6 +1,6 @@
+import Head from 'next/head';
 import AppProvider from '../providers';
 import '../styles/globals.css';
-import Head from 'next/head';
 
 const App = ({ Component, pageProps }) => (
   <AppProvider>
@@ -151,8 +151,7 @@ const App = ({ Component, pageProps }) => (
         href="/apple-splash-1136-640.jpg"
         media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
       />
-
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="manifest" href="/manifest.json" />
     </Head>
     <Component {...pageProps} />
   </AppProvider>
