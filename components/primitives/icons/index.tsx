@@ -29,6 +29,8 @@ import {
   AdoreAlt,
   Lightstrip,
   PendantBeing,
+  Go,
+  FloorShade,
 } from './hue-icons';
 import { BiHome } from 'react-icons/bi';
 import { SiHomebridge } from 'react-icons/si';
@@ -101,6 +103,10 @@ function Icon(props) {
       return <SiHomebridge />;
     case 'Plus':
       return <IoMdAdd />;
+    case 'Go':
+      return <Go />;
+    case 'FloorShade':
+      return <FloorShade />;
     default:
       return <span>Unknown icon: {props.symbol}</span>;
   }
