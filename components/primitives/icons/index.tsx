@@ -108,7 +108,7 @@ function Icon(props) {
     case 'FloorShade':
       return <FloorShade />;
     default:
-      return <span>Unknown icon: {props.symbol}</span>;
+      return <BsLightbulbFill />;
   }
 }
 
